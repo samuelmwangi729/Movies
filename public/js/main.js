@@ -275,7 +275,40 @@
             });
         }
     });
-
+    $("#signUp").on("click",(e)=> {
+        e.preventDefault();
+        let name=document.getElementById("name").value;
+        let email=document.getElementById("email").value;
+        let password=document.getElementById("password").value;
+        let cpassword=document.getElementById("cpassword").value;
+        let NameError=document.getElementById("errName");
+        let EmailError=document.getElementById("errEmail");
+        let PassError=document.getElementById("errPassword");
+        let CPassError=document.getElementById("errCPassword");
+        let form=document.getElementById("sform");
+        if(name==''){
+            NameError.innerHTML="<span class='text-danger'><i class='fa fa-times-circle'></i> Username Cant be empty</span>";
+            form.clear();
+        }
+        if (email =='') {
+            EmailError.innerHTML="<span class='text-danger'><i class='fa fa-envelope'></i> Email Cant be empty</span>";
+            form.clear();
+        }
+        if(password==''){
+            PassError.innerHTML="<span class='text-danger'><i class='fa fa-lock'></i> Password Cant be empty</span>";
+            form.clear();
+        }
+        if(cpassword == ''){
+            CPassError.innerHTML="<span class='text-danger'><i class='fa fa-lock'></i> This Field  Cant be empty</span>";
+            form.clear();
+        }
+        if(cpassword != password){
+            NameError.innerHTML="<span class='text-danger'><i class='fa fa-times-circle'></i> Passwords Do Not Match</span>";
+            form.clear();
+        }else{
+            form.submit();
+        }
+    })
     $('.circle-progress-2').each(function () {
         var cpvalue = $(this).data("cpvalue");
         var cpcolor = $(this).data("cpcolor");

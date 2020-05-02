@@ -1,1 +1,1 @@
-code . && php artisan  serve
+code .

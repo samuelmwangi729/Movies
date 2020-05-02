@@ -6,213 +6,7 @@
     <div id="preloder">
         <div class="loader"></div>
     </div>
-
-    <!-- Humberger Menu Begin -->
-    <div class="humberger-menu-overlay"></div>
-    <div class="humberger-menu-wrapper">
-        <div class="hw-logo">
-            <a href="#"><img src="img/f-logo.png" alt=""></a>
-        </div>
-        <div class="hw-menu mobile-menu">
-            <ul>
-                <li><a href="./index.html">Home</a></li>
-                <li>
-                    <a href="#"><span>Top Categories <i class="fa fa-angle-down"></i></span></a>
-                    <ul class="dropdown">
-                        <li><a href="./categories-list.html">Top Release</a></li>
-                        <li><a href="./categories-grid.html">Trailers</a></li>
-                        <li><a href="./typography.html">Typography</a></li>
-                        <li><a href="./details-post-default.html">Post default</a></li>
-                        <li><a href="./details-post-gallery.html">Post gallery</a></li>
-                        <li><a href="./details-post-review.html">Post review</a></li>
-                        <li><a href="./contact.html">Contact</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Videos <i class="fa fa-angle-down"></i></a>
-                    <ul class="dropdown">
-                        <li><a href="#">Top Rated</a></li>
-                        <li><a href="#">Trending</a></li>
-                        <li><a href="#">New</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-        <div id="mobile-menu-wrap"></div>
-        <div class="hw-copyright">
-            Copyright © 2019 Colorlib Inc. All rights reserved
-        </div>
-        <div class="hw-social">
-            <a href="#"><i class="fa fa-facebook"></i></a>
-            <a href="#"><i class="fa fa-twitter"></i></a>
-            <a href="#"><i class="fa fa-youtube-play"></i></a>
-            <a href="#"><i class="fa fa-instagram"></i></a>
-        </div>
-        <div class="hw-insta-media">
-            <div class="section-title">
-                <h5>Instagram</h5>
-            </div>
-            <div class="insta-pic">
-                <img src="img/instagram/ip-1.jpg" alt="">
-                <img src="img/instagram/ip-2.jpg" alt="">
-                <img src="img/instagram/ip-3.jpg" alt="">
-                <img src="img/instagram/ip-4.jpg" alt="">
-            </div>
-        </div>
-    </div>
-    <!-- Humberger Menu End -->
-
-    <!-- Header Section Begin -->
-    <header class="header-section">
-        <div class="ht-options">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-8">
-                        <div class="ht-widget">
-                            <ul>
-                                <li><i class="fa fa-clock-o"></i> {{ date('d-M-Y') }}</li>
-                                <li class="signup-switch signup-open"><i class="fa fa-user-plus"></i>Sign up</li>
-                                <li class="signin-switch signin-open" id="signin"><i class="fa fa-sign-in"></i>Sign In</li>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-4">
-                        <div class="ht-social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-youtube-play"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-envelope-o"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        {{-- <div class="logo">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                       <a href="./index.html"><img src="img/logo.png" alt=""></a>
-                    </div>
-                </div>
-            </div>
-        </div> --}}
-        <div class="nav-options">
-            <div class="container">
-                <div class="humberger-menu humberger-open">
-                    <i class="fa fa-bars"></i>
-                </div>
-                <div class="nav-search search-switch">
-                    <i class="fa fa-search"></i>
-                </div>
-                <div class="nav-menu">
-                    <ul>
-                        <li class="active"><a href="./index.html"><span>Home</span></a></li>
-                        <li class="mega-menu"><a href="#"><span>Featured <i class="fa fa-angle-down"></i></span></a>
-                            <div class="megamenu-wrapper" style="margin-top:-150px">
-                                {{-- <ul class="mw-nav">
-                                    <li><a href="#"><span>Playstation</span></a></li>
-                                    <li><a href="#"><span>Windows</span></a></li>
-                                    <li><a href="#"><span>Mobile</span></a></li>
-                                    <li><a href="#"><span>Xbox</span></a></li>
-                                </ul> --}}
-                                <div class="mw-post">
-                                    <div class="mw-post-item" >
-                                        <div class="mw-pic">
-                                            <img src="img/megamenu/mm-1.jpg" alt="">
-                                        </div>
-                                        <div class="mw-text">
-                                            <h6><a href="#">A Monster Prom poster got hijacked for a Papa Roach
-                                                    concert...</a></h6>
-                                            <ul>
-                                                <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
-                                                <li><i class="fa fa-comment-o"></i> 12</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="mw-post-item">
-                                        <div class="mw-pic">
-                                            <img src="img/megamenu/mm-2.jpg" alt="">
-                                        </div>
-                                        <div class="mw-text">
-                                            <h6><a href="#">A new Borderlands 3 trailer introduces Moze and her...</a>
-                                            </h6>
-                                            <ul>
-                                                <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
-                                                <li><i class="fa fa-comment-o"></i> 12</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="mw-post-item">
-                                        <div class="mw-pic">
-                                            <img src="img/megamenu/mm-3.jpg" alt="">
-                                        </div>
-                                        <div class="mw-text">
-                                            <h6><a href="#">Teamfight Tactics is in chaos after today's patch...</a>
-                                            </h6>
-                                            <ul>
-                                                <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
-                                                <li><i class="fa fa-comment-o"></i> 12</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="mw-post-item">
-                                        <div class="mw-pic">
-                                            <img src="img/megamenu/mm-4.jpg" alt="">
-                                        </div>
-                                        <div class="mw-text">
-                                            <h6><a href="#">Borderlands 2 dev explains why there's mysterious
-                                                    boxes...</a></h6>
-                                            <ul>
-                                                <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
-                                                <li><i class="fa fa-comment-o"></i> 12</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="mw-post-item">
-                                        <div class="mw-pic">
-                                            <img src="img/megamenu/mm-5.jpg" alt="">
-                                        </div>
-                                        <div class="mw-text">
-                                            <h6><a href="#">Capcom asks select fans to test new Resident Evil game</a>
-                                            </h6>
-                                            <ul>
-                                                <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
-                                                <li><i class="fa fa-comment-o"></i> 12</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="#"><span>Top Categories <i class="fa fa-angle-down"></i></span></a>
-                            <ul class="dropdown">
-                                <li><a href="./categories-list.html">Top Release</a></li>
-                                <li><a href="./categories-grid.html">Trailers</a></li>
-                                <li><a href="./typography.html">Typography</a></li>
-                                <li><a href="./details-post-default.html">Post default</a></li>
-                                <li><a href="./details-post-gallery.html">Post gallery</a></li>
-                                <li><a href="./details-post-review.html">Post review</a></li>
-                                <li><a href="./contact.html">Contact</a></li>
-                            </ul>
-                        </li>
-                        {{-- <li><a href="#"><span>Reviews <i class="fa fa-angle-down"></i></span></a></li>
-                        <li><a href="#"><span>Windows <i class="fa fa-angle-down"></i></span></a></li> --}}
-                        <li><a href="#"><span>Videos <i class="fa fa-angle-down"></i></span></a>
-                            <ul class="dropdown">
-                                <li><a href="#">Top Rated</a></li>
-                                <li><a href="#">Trending</a></li>
-                                <li><a href="#">New</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- Header End -->
-
+    @include('layouts.nav')
     <!-- Hero Section Begin -->
     <section class="hero-section">
         <div class="container">
@@ -225,7 +19,7 @@
                             <img src="img/hero/meta-pic.jpg" alt="">
                             <ul>
                                 <li style="color:yellow"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half"></i></li>
-                                <li>Uploaded On Aug 01, 2019</li>
+                                <li>Uploaded On May 01, 2020</li>
                             </ul>
                         </div>
                     </div>
@@ -245,7 +39,7 @@
                                         <h6><a href="#">Thriling and exciting Movie.Dont watch it Alone</a>
                                         </h6>
                                         <ul>
-                                            <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                            <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                             <li><i class="fa fa-comment-o"></i> 12</li>
                                         </ul>
                                     </div>
@@ -257,7 +51,7 @@
                                     <div class="ti-text">
                                         <h6><a href="#">I really Never Liked Animations but this, I loved it.</a></h6>
                                         <ul>
-                                            <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                            <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                             <li><i class="fa fa-comment-o"></i> 12</li>
                                         </ul>
                                     </div>
@@ -270,7 +64,7 @@
                                         <h6><a href="#">Best Sci-Fi Movie Available in the market</a>
                                         </h6>
                                         <ul>
-                                            <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                            <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                             <li><i class="fa fa-comment-o"></i> 12</li>
                                         </ul>
                                     </div>
@@ -283,7 +77,7 @@
                                         <h6><a href="#">Jalopy developer is making a game where you 'build stuff...</a>
                                         </h6>
                                         <ul>
-                                            <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                            <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                             <li><i class="fa fa-comment-o"></i> 12</li>
                                         </ul>
                                     </div>
@@ -308,7 +102,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title">
-                        <h5>Latest Preview</h5>
+                        <h5>Categories</h5>
                     </div>
                 </div>
             </div>
@@ -317,20 +111,12 @@
                     <div class="col-lg-3">
                         <div class="lp-item">
                             <div class="lp-pic set-bg" data-setbg="img/latest-preview/lp-1.jpg">
-                                <div class="review-loader">
-                                    <div class="loader-circle-wrap">
-                                        <div class="loader-circle">
-                                            <span class="circle-progress" data-cpid="id" data-cpvalue="75"
-                                                data-cpcolor="#c20000"></span>
-                                            <div class="review-point">7.5</div>
-                                        </div>
-                                    </div>
-                                </div>
+
                             </div>
                             <div class="lp-text">
-                                <h6><a href="#">Teamfight Tactics is in chaos after patch...</a></h6>
+                                <h6><a href="#">Entertainment</a></h6>
                                 <ul>
-                                    <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                    <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                     <li><i class="fa fa-comment-o"></i> 12</li>
                                 </ul>
                             </div>
@@ -339,20 +125,12 @@
                     <div class="col-lg-3">
                         <div class="lp-item">
                             <div class="lp-pic set-bg" data-setbg="img/latest-preview/lp-2.jpg">
-                                <div class="review-loader">
-                                    <div class="loader-circle-wrap">
-                                        <div class="loader-circle">
-                                            <span class="circle-progress" data-cpid="id" data-cpvalue="75"
-                                                data-cpcolor="#c20000"></span>
-                                            <div class="review-point">7.5</div>
-                                        </div>
-                                    </div>
-                                </div>
+
                             </div>
                             <div class="lp-text">
-                                <h6><a href="#">Lenovo’s y540 gaming laptop with an rtx 2060...</a></h6>
+                                <h6><a href="#">News and Politics</a></h6>
                                 <ul>
-                                    <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                    <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                     <li><i class="fa fa-comment-o"></i> 12</li>
                                 </ul>
                             </div>
@@ -361,20 +139,12 @@
                     <div class="col-lg-3">
                         <div class="lp-item">
                             <div class="lp-pic set-bg" data-setbg="img/latest-preview/lp-3.jpg">
-                                <div class="review-loader">
-                                    <div class="loader-circle-wrap">
-                                        <div class="loader-circle">
-                                            <span class="circle-progress" data-cpid="id" data-cpvalue="75"
-                                                data-cpcolor="#c20000"></span>
-                                            <div class="review-point">7.5</div>
-                                        </div>
-                                    </div>
-                                </div>
+
                             </div>
                             <div class="lp-text">
-                                <h6><a href="#">A monter prom poster got hijacked for a...</a></h6>
+                                <h6><a href="#">How to &amp; Style</a></h6>
                                 <ul>
-                                    <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                    <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                     <li><i class="fa fa-comment-o"></i> 12</li>
                                 </ul>
                             </div>
@@ -383,20 +153,12 @@
                     <div class="col-lg-3">
                         <div class="lp-item">
                             <div class="lp-pic set-bg" data-setbg="img/latest-preview/lp-4.jpg">
-                                <div class="review-loader">
-                                    <div class="loader-circle-wrap">
-                                        <div class="loader-circle">
-                                            <span class="circle-progress" data-cpid="id" data-cpvalue="75"
-                                                data-cpcolor="#c20000"></span>
-                                            <div class="review-point">7.5</div>
-                                        </div>
-                                    </div>
-                                </div>
+
                             </div>
                             <div class="lp-text">
-                                <h6><a href="#">Facebook wants to read your thoughts with...</a></h6>
+                                <h6><a href="#">Education</a></h6>
                                 <ul>
-                                    <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                    <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                     <li><i class="fa fa-comment-o"></i> 12</li>
                                 </ul>
                             </div>
@@ -405,20 +167,12 @@
                     <div class="col-lg-3">
                         <div class="lp-item">
                             <div class="lp-pic set-bg" data-setbg="img/latest-preview/lp-4.jpg">
-                                <div class="review-loader">
-                                    <div class="loader-circle-wrap">
-                                        <div class="loader-circle">
-                                            <span class="circle-progress" data-cpid="id" data-cpvalue="75"
-                                                data-cpcolor="#c20000"></span>
-                                            <div class="review-point">7.5</div>
-                                        </div>
-                                    </div>
-                                </div>
+
                             </div>
                             <div class="lp-text">
-                                <h6><a href="#">Facebook wants to read your thoughts with...</a></h6>
+                                <h6><a href="#">Science &amp; Tech</a></h6>
                                 <ul>
-                                    <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                    <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                     <li><i class="fa fa-comment-o"></i> 12</li>
                                 </ul>
                             </div>
@@ -427,20 +181,12 @@
                     <div class="col-lg-3">
                         <div class="lp-item">
                             <div class="lp-pic set-bg" data-setbg="img/latest-preview/lp-4.jpg">
-                                <div class="review-loader">
-                                    <div class="loader-circle-wrap">
-                                        <div class="loader-circle">
-                                            <span class="circle-progress" data-cpid="id" data-cpvalue="75"
-                                                data-cpcolor="#c20000"></span>
-                                            <div class="review-point">7.5</div>
-                                        </div>
-                                    </div>
-                                </div>
+
                             </div>
                             <div class="lp-text">
-                                <h6><a href="#">Facebook wants to read your thoughts with...</a></h6>
+                                <h6><a href="#">Non Profit &amp; Activism</a></h6>
                                 <ul>
-                                    <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                    <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                     <li><i class="fa fa-comment-o"></i> 12</li>
                                 </ul>
                             </div>
@@ -449,20 +195,12 @@
                     <div class="col-lg-3">
                         <div class="lp-item">
                             <div class="lp-pic set-bg" data-setbg="img/latest-preview/lp-4.jpg">
-                                <div class="review-loader">
-                                    <div class="loader-circle-wrap">
-                                        <div class="loader-circle">
-                                            <span class="circle-progress" data-cpid="id" data-cpvalue="75"
-                                                data-cpcolor="#c20000"></span>
-                                            <div class="review-point">7.5</div>
-                                        </div>
-                                    </div>
-                                </div>
+
                             </div>
                             <div class="lp-text">
-                                <h6><a href="#">Facebook wants to read your thoughts with...</a></h6>
+                                <h6><a href="#">Film &amp; Animation</a></h6>
                                 <ul>
-                                    <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                    <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                     <li><i class="fa fa-comment-o"></i> 12</li>
                                 </ul>
                             </div>
@@ -505,11 +243,13 @@
                                             <div class="un-big-item set-bg" data-setbg="img/news/news-1.jpg">
                                                 <div class="ub-text">
                                                     <div class="label"><span>Reviews</span></div>
-                                                    <h5><a href="#">Get one of our favorite nvme ssds, the 2tb samsung
-                                                            970 evo, for $120 less than nomal</a></h5>
+                                                    <h5><a href="#">
+                                                        The Raid. Its now Here With Us. Check It Out
+                                                        </a>
+                                                    </h5>
                                                     <ul>
                                                         <li>by <span>Admin</span></li>
-                                                        <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                                        <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                                         <li><i class="fa fa-comment-o"></i> 20</li>
                                                     </ul>
                                                 </div>
@@ -521,10 +261,10 @@
                                                             <div class="label"><span>Reviews</span></div>
                                                         </div>
                                                         <div class="un_text">
-                                                            <h6><a href="#">Downwell and space hulk: tactics are coming
+                                                            <h6><a href="#">Downwell tactics are coming
                                                                     to...</a></h6>
                                                             <ul>
-                                                                <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                                                <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                                                 <li><i class="fa fa-comment-o"></i> 20</li>
                                                             </ul>
                                                         </div>
@@ -536,10 +276,10 @@
                                                             <div class="label"><span>Reviews</span></div>
                                                         </div>
                                                         <div class="un_text">
-                                                            <h6><a href="#">Downwell and space hulk: tactics are coming
+                                                            <h6><a href="#"> space hulk: tactics are coming
                                                                     to...</a></h6>
                                                             <ul>
-                                                                <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                                                <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                                                 <li><i class="fa fa-comment-o"></i> 20</li>
                                                             </ul>
                                                         </div>
@@ -554,7 +294,7 @@
                                                             <h6><a href="#">Downwell and space hulk: tactics are coming
                                                                     to...</a></h6>
                                                             <ul>
-                                                                <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                                                <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                                                 <li><i class="fa fa-comment-o"></i> 20</li>
                                                             </ul>
                                                         </div>
@@ -566,11 +306,10 @@
                                             <div class="un-big-item set-bg" data-setbg="img/news/news-1.jpg">
                                                 <div class="ub-text">
                                                     <div class="label"><span>Reviews</span></div>
-                                                    <h5><a href="#">Get one of our favorite nvme ssds, the 2tb samsung
-                                                            970 evo, for $120 less than nomal</a></h5>
+                                                    <h5><a href="#">Mortal Combat introduces tanks into its Update. Find Out How</a></h5>
                                                     <ul>
                                                         <li>by <span>Admin</span></li>
-                                                        <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                                        <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                                         <li><i class="fa fa-comment-o"></i> 20</li>
                                                     </ul>
                                                 </div>
@@ -582,10 +321,11 @@
                                                             <div class="label"><span>Reviews</span></div>
                                                         </div>
                                                         <div class="un_text">
-                                                            <h6><a href="#">Downwell and space hulk: tactics are coming
-                                                                    to...</a></h6>
+                                                            <h6><a href="#">
+                                                                Play Mortal Combat Using Raven and Win!!!
+                                                                </a></h6>
                                                             <ul>
-                                                                <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                                                <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                                                 <li><i class="fa fa-comment-o"></i> 20</li>
                                                             </ul>
                                                         </div>
@@ -597,10 +337,11 @@
                                                             <div class="label"><span>Reviews</span></div>
                                                         </div>
                                                         <div class="un_text">
-                                                            <h6><a href="#">Downwell and space hulk: tactics are coming
-                                                                    to...</a></h6>
+                                                            <h6><a href="#">
+                                                                Peter Parker new Moview Trailer
+                                                            </a></h6>
                                                             <ul>
-                                                                <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                                                <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                                                 <li><i class="fa fa-comment-o"></i> 20</li>
                                                             </ul>
                                                         </div>
@@ -612,10 +353,9 @@
                                                             <div class="label"><span>Reviews</span></div>
                                                         </div>
                                                         <div class="un_text">
-                                                            <h6><a href="#">Downwell and space hulk: tactics are coming
-                                                                    to...</a></h6>
+                                                            <h6><a href="#">The Visitor. Man From Nowhere</a></h6>
                                                             <ul>
-                                                                <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                                                <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                                                 <li><i class="fa fa-comment-o"></i> 20</li>
                                                             </ul>
                                                         </div>
@@ -637,7 +377,7 @@
                                                             970 evo, for $120 less than nomal</a></h5>
                                                     <ul>
                                                         <li>by <span>Admin</span></li>
-                                                        <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                                        <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                                         <li><i class="fa fa-comment-o"></i> 20</li>
                                                     </ul>
                                                 </div>
@@ -652,7 +392,7 @@
                                                             <h6><a href="#">Downwell and space hulk: tactics are coming
                                                                     to...</a></h6>
                                                             <ul>
-                                                                <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                                                <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                                                 <li><i class="fa fa-comment-o"></i> 20</li>
                                                             </ul>
                                                         </div>
@@ -667,7 +407,7 @@
                                                             <h6><a href="#">Downwell and space hulk: tactics are coming
                                                                     to...</a></h6>
                                                             <ul>
-                                                                <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                                                <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                                                 <li><i class="fa fa-comment-o"></i> 20</li>
                                                             </ul>
                                                         </div>
@@ -682,7 +422,7 @@
                                                             <h6><a href="#">Downwell and space hulk: tactics are coming
                                                                     to...</a></h6>
                                                             <ul>
-                                                                <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                                                <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                                                 <li><i class="fa fa-comment-o"></i> 20</li>
                                                             </ul>
                                                         </div>
@@ -698,7 +438,7 @@
                                                             970 evo, for $120 less than nomal</a></h5>
                                                     <ul>
                                                         <li>by <span>Admin</span></li>
-                                                        <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                                        <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                                         <li><i class="fa fa-comment-o"></i> 20</li>
                                                     </ul>
                                                 </div>
@@ -713,7 +453,7 @@
                                                             <h6><a href="#">Downwell and space hulk: tactics are coming
                                                                     to...</a></h6>
                                                             <ul>
-                                                                <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                                                <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                                                 <li><i class="fa fa-comment-o"></i> 20</li>
                                                             </ul>
                                                         </div>
@@ -728,7 +468,7 @@
                                                             <h6><a href="#">Downwell and space hulk: tactics are coming
                                                                     to...</a></h6>
                                                             <ul>
-                                                                <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                                                <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                                                 <li><i class="fa fa-comment-o"></i> 20</li>
                                                             </ul>
                                                         </div>
@@ -743,7 +483,7 @@
                                                             <h6><a href="#">Downwell and space hulk: tactics are coming
                                                                     to...</a></h6>
                                                             <ul>
-                                                                <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                                                <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                                                 <li><i class="fa fa-comment-o"></i> 20</li>
                                                             </ul>
                                                         </div>
@@ -765,7 +505,7 @@
                                                             970 evo, for $120 less than nomal</a></h5>
                                                     <ul>
                                                         <li>by <span>Admin</span></li>
-                                                        <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                                        <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                                         <li><i class="fa fa-comment-o"></i> 20</li>
                                                     </ul>
                                                 </div>
@@ -780,7 +520,7 @@
                                                             <h6><a href="#">Downwell and space hulk: tactics are coming
                                                                     to...</a></h6>
                                                             <ul>
-                                                                <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                                                <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                                                 <li><i class="fa fa-comment-o"></i> 20</li>
                                                             </ul>
                                                         </div>
@@ -795,7 +535,7 @@
                                                             <h6><a href="#">Downwell and space hulk: tactics are coming
                                                                     to...</a></h6>
                                                             <ul>
-                                                                <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                                                <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                                                 <li><i class="fa fa-comment-o"></i> 20</li>
                                                             </ul>
                                                         </div>
@@ -810,7 +550,7 @@
                                                             <h6><a href="#">Downwell and space hulk: tactics are coming
                                                                     to...</a></h6>
                                                             <ul>
-                                                                <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                                                <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                                                 <li><i class="fa fa-comment-o"></i> 20</li>
                                                             </ul>
                                                         </div>
@@ -826,7 +566,7 @@
                                                             970 evo, for $120 less than nomal</a></h5>
                                                     <ul>
                                                         <li>by <span>Admin</span></li>
-                                                        <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                                        <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                                         <li><i class="fa fa-comment-o"></i> 20</li>
                                                     </ul>
                                                 </div>
@@ -841,7 +581,7 @@
                                                             <h6><a href="#">Downwell and space hulk: tactics are coming
                                                                     to...</a></h6>
                                                             <ul>
-                                                                <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                                                <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                                                 <li><i class="fa fa-comment-o"></i> 20</li>
                                                             </ul>
                                                         </div>
@@ -856,7 +596,7 @@
                                                             <h6><a href="#">Downwell and space hulk: tactics are coming
                                                                     to...</a></h6>
                                                             <ul>
-                                                                <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                                                <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                                                 <li><i class="fa fa-comment-o"></i> 20</li>
                                                             </ul>
                                                         </div>
@@ -871,7 +611,7 @@
                                                             <h6><a href="#">Downwell and space hulk: tactics are coming
                                                                     to...</a></h6>
                                                             <ul>
-                                                                <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                                                <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                                                 <li><i class="fa fa-comment-o"></i> 20</li>
                                                             </ul>
                                                         </div>
@@ -893,7 +633,7 @@
                                                             970 evo, for $120 less than nomal</a></h5>
                                                     <ul>
                                                         <li>by <span>Admin</span></li>
-                                                        <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                                        <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                                         <li><i class="fa fa-comment-o"></i> 20</li>
                                                     </ul>
                                                 </div>
@@ -908,7 +648,7 @@
                                                             <h6><a href="#">Downwell and space hulk: tactics are coming
                                                                     to...</a></h6>
                                                             <ul>
-                                                                <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                                                <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                                                 <li><i class="fa fa-comment-o"></i> 20</li>
                                                             </ul>
                                                         </div>
@@ -923,7 +663,7 @@
                                                             <h6><a href="#">Downwell and space hulk: tactics are coming
                                                                     to...</a></h6>
                                                             <ul>
-                                                                <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                                                <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                                                 <li><i class="fa fa-comment-o"></i> 20</li>
                                                             </ul>
                                                         </div>
@@ -938,7 +678,7 @@
                                                             <h6><a href="#">Downwell and space hulk: tactics are coming
                                                                     to...</a></h6>
                                                             <ul>
-                                                                <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                                                <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                                                 <li><i class="fa fa-comment-o"></i> 20</li>
                                                             </ul>
                                                         </div>
@@ -954,7 +694,7 @@
                                                             970 evo, for $120 less than nomal</a></h5>
                                                     <ul>
                                                         <li>by <span>Admin</span></li>
-                                                        <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                                        <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                                         <li><i class="fa fa-comment-o"></i> 20</li>
                                                     </ul>
                                                 </div>
@@ -969,7 +709,7 @@
                                                             <h6><a href="#">Downwell and space hulk: tactics are coming
                                                                     to...</a></h6>
                                                             <ul>
-                                                                <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                                                <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                                                 <li><i class="fa fa-comment-o"></i> 20</li>
                                                             </ul>
                                                         </div>
@@ -984,7 +724,7 @@
                                                             <h6><a href="#">Downwell and space hulk: tactics are coming
                                                                     to...</a></h6>
                                                             <ul>
-                                                                <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                                                <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                                                 <li><i class="fa fa-comment-o"></i> 20</li>
                                                             </ul>
                                                         </div>
@@ -999,7 +739,7 @@
                                                             <h6><a href="#">Downwell and space hulk: tactics are coming
                                                                     to...</a></h6>
                                                             <ul>
-                                                                <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                                                <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                                                 <li><i class="fa fa-comment-o"></i> 20</li>
                                                             </ul>
                                                         </div>
@@ -1044,17 +784,17 @@
                         </div>
                         <div class="hardware-guides">
                             <div class="section-title">
-                                <h5>Hardware guides</h5>
+                                <h5>{{ config('app.name') }} Blog</h5>
                             </div>
                             <div class="trending-item">
                                 <div class="ti-pic">
                                     <img src="img/trending/trending-5.jpg" alt="">
                                 </div>
                                 <div class="ti-text">
-                                    <h6><a href="#">A Monster Prom poster got hijacked for a Papa Roach concert...</a>
+                                    <h6><a href="#">Money Heist S04 Was simply over rated</a>
                                     </h6>
                                     <ul>
-                                        <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                        <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                         <li><i class="fa fa-comment-o"></i> 12</li>
                                     </ul>
                                 </div>
@@ -1064,9 +804,9 @@
                                     <img src="img/trending/trending-6.jpg" alt="">
                                 </div>
                                 <div class="ti-text">
-                                    <h6><a href="#">Facebook wants to read your thoughts with its augmented...</a></h6>
+                                    <h6><a href="#">Dhoom S05 to be released Soon.</a></h6>
                                     <ul>
-                                        <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                        <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                         <li><i class="fa fa-comment-o"></i> 12</li>
                                     </ul>
                                 </div>
@@ -1076,10 +816,10 @@
                                     <img src="img/trending/trending-7.jpg" alt="">
                                 </div>
                                 <div class="ti-text">
-                                    <h6><a href="#">This gaming laptop with a GTX 1660 Ti and 32GB of RAM is down...</a>
+                                    <h6><a href="#">What Motivated Salman Khan in "JAIHO" ?</a>
                                     </h6>
                                     <ul>
-                                        <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                        <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                         <li><i class="fa fa-comment-o"></i> 12</li>
                                     </ul>
                                 </div>
@@ -1089,9 +829,9 @@
                                     <img src="img/trending/trending-8.jpg" alt="">
                                 </div>
                                 <div class="ti-text">
-                                    <h6><a href="#">Jalopy developer is making a game where you 'build stuff...</a></h6>
+                                    <h6><a href="#">First Hindi Kungfu Movie Leaked!!!</a></h6>
                                     <ul>
-                                        <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                        <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                         <li><i class="fa fa-comment-o"></i> 12</li>
                                     </ul>
                                 </div>
@@ -1110,25 +850,11 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title">
-                        <h5>Videos guide</h5>
+                        <h5>Video Trailers</h5>
                     </div>
                 </div>
             </div>
             <div class="tab-elem">
-                <ul class="nav nav-tabs" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link active" data-toggle="tab" href="#tabs-5" role="tab">All</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#tabs-6" role="tab">Featured/a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#tabs-7" role="tab">Hardware</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#tabs-8" role="tab">Reviews</a>
-                    </li>
-                </ul><!-- Tab panes -->
                 <div class="tab-content">
                     <div class="tab-pane fade show active" id="tabs-5" role="tabpanel">
                         <div class="row">
@@ -1137,13 +863,12 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="vg-item large-vg set-bg" data-setbg="img/videos/videos-1.jpg">
-                                                <a href="https://www.youtube.com/watch?v=EzKkl64rRbM"
+                                                <a href="{{ url('videos/heri.mp4') }}"
                                                     class="play-btn video-popup"><i class="fa fa-play"></i></a>
                                                 <div class="vg-text">
-                                                    <h5>THROUGH THE AGES' FIRST EXPANSION WILL BE RELEASING ON DIGITAL
-                                                        PLATFORMS...</h5>
+                                                    <h5>La Casa De Papel S05</h5>
                                                     <ul>
-                                                        <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                                        <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                                         <li><i class="fa fa-comment-o"></i> 12</li>
                                                     </ul>
                                                 </div>
@@ -1154,10 +879,9 @@
                                                 <a href="https://www.youtube.com/watch?v=EzKkl64rRbM"
                                                     class="play-btn video-popup"><i class="fa fa-play"></i></a>
                                                 <div class="vg-text">
-                                                    <h5>THROUGH THE AGES' FIRST EXPANSION WILL BE RELEASING ON DIGITAL
-                                                        PLATFORMS...</h5>
+                                                    <h5>FIRST EXPANSION</h5>
                                                     <ul>
-                                                        <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                                        <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                                         <li><i class="fa fa-comment-o"></i> 12</li>
                                                     </ul>
                                                 </div>
@@ -1170,7 +894,7 @@
                                                 <a href="https://www.youtube.com/watch?v=EzKkl64rRbM"
                                                     class="play-btn video-popup"><i class="fa fa-play"></i></a>
                                                 <div class="vg-text">
-                                                    <h6>THis gam,ing laptop with Gtx 1660 ti and of ram is</h6>
+                                                    <h6>Fast And Furious 12</h6>
                                                 </div>
                                             </div>
                                         </div>
@@ -1179,7 +903,7 @@
                                                 <a href="https://www.youtube.com/watch?v=EzKkl64rRbM"
                                                     class="play-btn video-popup"><i class="fa fa-play"></i></a>
                                                 <div class="vg-text">
-                                                    <h6>THis gam,ing laptop with Gtx 1660 ti and of ram is</h6>
+                                                    <h6>Black Panther</h6>
                                                 </div>
                                             </div>
                                         </div>
@@ -1188,7 +912,7 @@
                                                 <a href="https://www.youtube.com/watch?v=EzKkl64rRbM"
                                                     class="play-btn video-popup"><i class="fa fa-play"></i></a>
                                                 <div class="vg-text">
-                                                    <h6>THis gam,ing laptop with Gtx 1660 ti and of ram is</h6>
+                                                    <h6>Guardians of The Galaxy</h6>
                                                 </div>
                                             </div>
                                         </div>
@@ -1201,10 +925,9 @@
                                                 <a href="https://www.youtube.com/watch?v=EzKkl64rRbM"
                                                     class="play-btn video-popup"><i class="fa fa-play"></i></a>
                                                 <div class="vg-text">
-                                                    <h5>THROUGH THE AGES' FIRST EXPANSION WILL BE RELEASING ON DIGITAL
-                                                        PLATFORMS...</h5>
+                                                    <h5>THROUGH THE EDGE'.</h5>
                                                     <ul>
-                                                        <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                                        <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                                         <li><i class="fa fa-comment-o"></i> 12</li>
                                                     </ul>
                                                 </div>
@@ -1215,10 +938,9 @@
                                                 <a href="https://www.youtube.com/watch?v=EzKkl64rRbM"
                                                     class="play-btn video-popup"><i class="fa fa-play"></i></a>
                                                 <div class="vg-text">
-                                                    <h5>THROUGH THE AGES' FIRST EXPANSION WILL BE RELEASING ON DIGITAL
-                                                        PLATFORMS...</h5>
+                                                    <h5>A Million ways to die in the East</h5>
                                                     <ul>
-                                                        <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                                        <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                                         <li><i class="fa fa-comment-o"></i> 12</li>
                                                     </ul>
                                                 </div>
@@ -1231,7 +953,7 @@
                                                 <a href="https://www.youtube.com/watch?v=EzKkl64rRbM"
                                                     class="play-btn video-popup"><i class="fa fa-play"></i></a>
                                                 <div class="vg-text">
-                                                    <h6>THis gam,ing laptop with Gtx 1660 ti and of ram is</h6>
+                                                    <h6>The BodyGuard</h6>
                                                 </div>
                                             </div>
                                         </div>
@@ -1240,7 +962,7 @@
                                                 <a href="https://www.youtube.com/watch?v=EzKkl64rRbM"
                                                     class="play-btn video-popup"><i class="fa fa-play"></i></a>
                                                 <div class="vg-text">
-                                                    <h6>THis gam,ing laptop with Gtx 1660 ti and of ram is</h6>
+                                                    <h6>The Fist of the Legend</h6>
                                                 </div>
                                             </div>
                                         </div>
@@ -1249,7 +971,7 @@
                                                 <a href="https://www.youtube.com/watch?v=EzKkl64rRbM"
                                                     class="play-btn video-popup"><i class="fa fa-play"></i></a>
                                                 <div class="vg-text">
-                                                    <h6>THis gam,ing laptop with Gtx 1660 ti and of ram is</h6>
+                                                    <h6>The Handsome Deamon</h6>
                                                 </div>
                                             </div>
                                         </div>
@@ -1271,7 +993,7 @@
                                                     <h5>THROUGH THE AGES' FIRST EXPANSION WILL BE RELEASING ON DIGITAL
                                                         PLATFORMS...</h5>
                                                     <ul>
-                                                        <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                                        <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                                         <li><i class="fa fa-comment-o"></i> 12</li>
                                                     </ul>
                                                 </div>
@@ -1285,7 +1007,7 @@
                                                     <h5>THROUGH THE AGES' FIRST EXPANSION WILL BE RELEASING ON DIGITAL
                                                         PLATFORMS...</h5>
                                                     <ul>
-                                                        <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                                        <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                                         <li><i class="fa fa-comment-o"></i> 12</li>
                                                     </ul>
                                                 </div>
@@ -1332,7 +1054,7 @@
                                                     <h5>THROUGH THE AGES' FIRST EXPANSION WILL BE RELEASING ON DIGITAL
                                                         PLATFORMS...</h5>
                                                     <ul>
-                                                        <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                                        <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                                         <li><i class="fa fa-comment-o"></i> 12</li>
                                                     </ul>
                                                 </div>
@@ -1346,7 +1068,7 @@
                                                     <h5>THROUGH THE AGES' FIRST EXPANSION WILL BE RELEASING ON DIGITAL
                                                         PLATFORMS...</h5>
                                                     <ul>
-                                                        <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                                        <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                                         <li><i class="fa fa-comment-o"></i> 12</li>
                                                     </ul>
                                                 </div>
@@ -1399,7 +1121,7 @@
                                                     <h5>THROUGH THE AGES' FIRST EXPANSION WILL BE RELEASING ON DIGITAL
                                                         PLATFORMS...</h5>
                                                     <ul>
-                                                        <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                                        <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                                         <li><i class="fa fa-comment-o"></i> 12</li>
                                                     </ul>
                                                 </div>
@@ -1413,7 +1135,7 @@
                                                     <h5>THROUGH THE AGES' FIRST EXPANSION WILL BE RELEASING ON DIGITAL
                                                         PLATFORMS...</h5>
                                                     <ul>
-                                                        <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                                        <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                                         <li><i class="fa fa-comment-o"></i> 12</li>
                                                     </ul>
                                                 </div>
@@ -1460,7 +1182,7 @@
                                                     <h5>THROUGH THE AGES' FIRST EXPANSION WILL BE RELEASING ON DIGITAL
                                                         PLATFORMS...</h5>
                                                     <ul>
-                                                        <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                                        <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                                         <li><i class="fa fa-comment-o"></i> 12</li>
                                                     </ul>
                                                 </div>
@@ -1474,7 +1196,7 @@
                                                     <h5>THROUGH THE AGES' FIRST EXPANSION WILL BE RELEASING ON DIGITAL
                                                         PLATFORMS...</h5>
                                                     <ul>
-                                                        <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                                        <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                                         <li><i class="fa fa-comment-o"></i> 12</li>
                                                     </ul>
                                                 </div>
@@ -1527,7 +1249,7 @@
                                                     <h5>THROUGH THE AGES' FIRST EXPANSION WILL BE RELEASING ON DIGITAL
                                                         PLATFORMS...</h5>
                                                     <ul>
-                                                        <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                                        <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                                         <li><i class="fa fa-comment-o"></i> 12</li>
                                                     </ul>
                                                 </div>
@@ -1541,7 +1263,7 @@
                                                     <h5>THROUGH THE AGES' FIRST EXPANSION WILL BE RELEASING ON DIGITAL
                                                         PLATFORMS...</h5>
                                                     <ul>
-                                                        <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                                        <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                                         <li><i class="fa fa-comment-o"></i> 12</li>
                                                     </ul>
                                                 </div>
@@ -1588,7 +1310,7 @@
                                                     <h5>THROUGH THE AGES' FIRST EXPANSION WILL BE RELEASING ON DIGITAL
                                                         PLATFORMS...</h5>
                                                     <ul>
-                                                        <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                                        <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                                         <li><i class="fa fa-comment-o"></i> 12</li>
                                                     </ul>
                                                 </div>
@@ -1602,7 +1324,7 @@
                                                     <h5>THROUGH THE AGES' FIRST EXPANSION WILL BE RELEASING ON DIGITAL
                                                         PLATFORMS...</h5>
                                                     <ul>
-                                                        <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                                        <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                                         <li><i class="fa fa-comment-o"></i> 12</li>
                                                     </ul>
                                                 </div>
@@ -1654,7 +1376,7 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="section-title">
-                        <h5>Instagram</h5>
+                        <h5>Gaming News</h5>
                     </div>
                     <div class="ip-item">
                         <div class="ip-pic">
@@ -1665,7 +1387,7 @@
                             <h5><a href="#">Here's an hour of side-quests from The Outer Worlds...</a></h5>
                             <ul>
                                 <li>by <span>Admin</span></li>
-                                <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                 <li><i class="fa fa-comment-o"></i> 20</li>
                             </ul>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
@@ -1681,7 +1403,7 @@
                             <h5><a href="#">Infinity Ward's focus isn't on battle royale, Call of...</a></h5>
                             <ul>
                                 <li>by <span>Admin</span></li>
-                                <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                 <li><i class="fa fa-comment-o"></i> 20</li>
                             </ul>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
@@ -1697,7 +1419,7 @@
                             <h5><a href="#">Capcom asks select fans to test new Resident Evil game</a></h5>
                             <ul>
                                 <li>by <span>Admin</span></li>
-                                <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                 <li><i class="fa fa-comment-o"></i> 20</li>
                             </ul>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
@@ -1713,7 +1435,7 @@
                             <h5><a href="#">Teamfight Tactics is in chaos after today's patch...</a></h5>
                             <ul>
                                 <li>by <span>Admin</span></li>
-                                <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                 <li><i class="fa fa-comment-o"></i> 20</li>
                             </ul>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
@@ -1731,7 +1453,7 @@
                     <div class="sidebar-option">
                         <div class="insta-media">
                             <div class="section-title">
-                                <h5>Instagram</h5>
+                                <h5>Moview Posters</h5>
                             </div>
                             <div class="insta-pic">
                                 <img src="img/instagram/ip-1.jpg" alt="">
@@ -1757,7 +1479,7 @@
                                 <div class="bp-text">
                                     <h6><a href="#">This gaming laptop with a GTX 1660...</a></h6>
                                     <ul>
-                                        <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                        <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                         <li><i class="fa fa-comment-o"></i> 20</li>
                                     </ul>
                                 </div>
@@ -1775,7 +1497,7 @@
                                 <div class="bp-text">
                                     <h6><a href="#">This gaming laptop with a GTX 1660...</a></h6>
                                     <ul>
-                                        <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                        <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                         <li><i class="fa fa-comment-o"></i> 20</li>
                                     </ul>
                                 </div>
@@ -1793,7 +1515,7 @@
                                 <div class="bp-text">
                                     <h6><a href="#">This gaming laptop with a GTX 1660...</a></h6>
                                     <ul>
-                                        <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                        <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                         <li><i class="fa fa-comment-o"></i> 20</li>
                                     </ul>
                                 </div>
@@ -1811,7 +1533,7 @@
                                 <div class="bp-text">
                                     <h6><a href="#">This gaming laptop with a GTX 1660...</a></h6>
                                     <ul>
-                                        <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                        <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                         <li><i class="fa fa-comment-o"></i> 20</li>
                                     </ul>
                                 </div>
@@ -1842,7 +1564,7 @@
                 <div class="col-lg-4">
                     <div class="footer-about">
                         <div class="fa-logo">
-                            <a href="#"><img src="img/f-logo.png" alt=""></a>
+            <a href="/" style="color:white;font-family: 'Times New Roman', Times, serif;font-size:40px;text-shadow: 2px 2px blue,4px 4px black !important">{{ config('app.name') }}</a>
                         </div>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                             labore et dolore magna aliqua lacus vel facilisis.</p>
@@ -1864,10 +1586,10 @@
                                 <img src="img/trending/editor-1.jpg" alt="">
                             </div>
                             <div class="ec-text">
-                                <h6><a href="#">A Monster Prom poster got hijacked for a Papa Roach concert...</a>
+                                <h6><a href="#">The Brother</a>
                                 </h6>
                                 <ul>
-                                    <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                    <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                     <li><i class="fa fa-comment-o"></i> 12</li>
                                 </ul>
                             </div>
@@ -1877,10 +1599,10 @@
                                 <img src="img/trending/editor-2.jpg" alt="">
                             </div>
                             <div class="ec-text">
-                                <h6><a href="#">Facebook wants to read your thoughts with its augmented...</a>
+                                <h6><a href="#">The Invasion</a>
                                 </h6>
                                 <ul>
-                                    <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                    <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
                                     <li><i class="fa fa-comment-o"></i> 12</li>
                                 </ul>
                             </div>
@@ -1890,20 +1612,20 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="tags-cloud">
                         <div class="section-title">
-                            <h5>Tags Cloud</h5>
+                            <h5>Categories</h5>
                         </div>
                         <div class="tag-list">
                             <a href="#"><span>Gaming</span></a>
-                            <a href="#"><span>Platform</span></a>
-                            <a href="#"><span>Playstation</span></a>
-                            <a href="#"><span>Hardware</span></a>
-                            <a href="#"><span>Reviews</span></a>
+                            <a href="#"><span>People</span></a>
+                            <a href="#"><span>Moviews</span></a>
+                            <a href="#"><span>Education</span></a>
+                            <a href="#"><span>Technology</span></a>
                             <a href="#"><span>Simulation</span></a>
-                            <a href="#"><span>Strategy</span></a>
+                            <a href="#"><span>Lifestyle</span></a>
                             <a href="#"><span>Scientific</span></a>
                             <a href="#"><span>References</span></a>
                             <a href="#"><span>Role-playing</span></a>
-                            <a href="#"><span>Adventurea</span></a>
+                            <a href="#"><span>Blogs</span></a>
                         </div>
                     </div>
                 </div>
@@ -1912,7 +1634,7 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="ca-text"><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+  Copyright &copy;{{ date('Y') }}All rights reserved |SmartSoft Kenya
   <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p></div>
                     </div>
                     <div class="col-lg-6">
@@ -1938,21 +1660,25 @@
                     <h2>Sign up</h2>
                     <p>Fill out the form below to recieve a free and confidential</p>
                 </div>
-                <form action="#" class="signup-form">
+                <form method="POST" action="{{ route('register') }}" class="signup-form" id="sform">
+                    @csrf
                     <div class="sf-input-list">
-                        <input type="text" class="input-value" placeholder="User Name*">
-                        <input type="text" class="input-value" placeholder="Password">
-                        <input type="text" class="input-value" placeholder="Confirm Password">
-                        <input type="text" class="input-value" placeholder="Email Address">
-                        <input type="text" class="input-value" placeholder="Full Name">
+                        <span id="errName"></span>
+                        <input type="text" class="input-value" name="name" id="name" placeholder="UserName*">
+                        <span id="errEmail"></span>
+                        <input type="text" class="input-value" name="email" id="email" placeholder="Email Address">
+                        <span id="errPassword"></span>
+                        <input type="password" class="input-value" name="password" id="password" placeholder="Password">
+                        <span id="errCPassword"></span>
+                        <input type="password" class="input-value" name="password_confirmation" id="cpassword" placeholder="Confirm Password">
                     </div>
                     <div class="radio-check">
                         <label for="rc-agree">I agree with the term & conditions
-                            <input type="checkbox" id="rc-agree">
+                            <input type="checkbox" id="rc-agree" checked>
                             <span class="checkbox"></span>
                         </label>
                     </div>
-                    <button type="submit"><span>REGISTER NOW</span></button>
+                    <button type="submit" id="signUp"><span>REGISTER NOW</span></button>
                 </form>
             </div>
         </div>
@@ -1965,10 +1691,11 @@
                     <h2><i class="fa fa-sign-in"></i>Sign In</h2>
                     <p>Sign In to  your {{ config('app.name') }} Account</p>
                 </div>
-                <form action="#" class="signin-form">
-                    <div class="sf-input-list" >
-                        <input type="text" class="input-value" placeholder="Email Address">
-                        <input type="text" class="input-value" placeholder="Password">
+                <form action="{{route('login')}}"  method="post" class="signin-form" style="margin-top:100px">
+                    @csrf
+                    <div class="sf-input-list align-items-center" >
+                        <input type="email" class="input-value" name="email" placeholder="Email Address">
+                        <input type="password" class="input-value" name="password" placeholder="Password">
                     </div>
                     <button type="submit"><span>Login</span></button>
                 </form>
