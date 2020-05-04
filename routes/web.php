@@ -13,11 +13,60 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','IndexController@index');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/users', 'HomeController@users')->name('users');
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/users', 'HomeController@users')->name('users');
+    Route::get('/Categories/Home',[
+        'uses'=>'CategoriesController@index',
+        'as'=>'categories.index'
+    ]);
+    Route::post('/Categories/Save',[
+        'uses'=>'CategoriesController@store',
+        'as'=>'categories.save'
+    ]);
+    Route::get('/Categories/Delete/{id}',[
+        'uses'=>'CategoriesController@destroy',
+        'as'=>'categories.delete'
+    ]);
+    Route::get('/Videos/Index/',[
+        'uses'=>'VideosController@index',
+        'as'=>'videos.index'
+    ]);
+    Route::get('/Videos/Delete/{id}',[
+        'uses'=>'VideosController@destroy',
+        'as'=>'videos.delete'
+    ]);
+    Route::get('/Play/{id}',[
+        'uses'=>'VideosController@show',
+        'as'=>'videos.play'
+    ]);
+    Route::get('/Video/Edit/{id}',[
+        'uses'=>'VideosController@edit',
+        'as'=>'video.edit'
+    ]);
+    Route::get('/Video/Delete/{id}',[
+        'uses'=>'VideosController@destroy',
+        'as'=>'video.delete'
+    ]);
+    Route::post('/Videos/Add/',[
+        'uses'=>'VideosController@store',
+        'as'=>'video.add'
+    ]);
+    Route::post('/Videos/Update/{id}',[
+        'uses'=>'VideosController@update',
+        'as'=>'video.update'
+    ]);
+    Route::get('/Videos/Single/{id}',[
+        'uses'=>'CategoriesController@find',
+        'as'=>'category.find'
+    ]);
+    Route::get('/Videos/View/{id}',[
+        'uses'=>'CategoriesController@show',
+        'as'=>'video.review'
+    ]);
+
+});

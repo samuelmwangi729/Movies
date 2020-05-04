@@ -20,4 +20,9 @@
     <link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/slicknav.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css">
+    <style>
+        #category:hover{
+            background-color:red
+        }
+    </style>
 </head>

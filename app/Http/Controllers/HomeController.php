@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
+use App\{User,Category};
+use Auth;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -24,10 +25,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $categories=Category::count();
+        return view('home')->with('categories',$categories);
     }
 
     public function users(){
        return response(json_encode(User::all()));
     }
+    public function user(){
+        return response(json_encode(Auth::user()));
+     }
 }

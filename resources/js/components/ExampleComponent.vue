@@ -45,7 +45,7 @@
         //        xhr.open('GET','http://127.0.0.1:8000/users');
         //        xhr.onload = () => {
         //       this.values = JSON.parse(xhr.response);
-                
+
         //        }
         //        xhr.send()
         //     }
@@ -60,6 +60,6 @@
                 console.log("Error", error)
             });
         },
-        
+
     }
 </script>

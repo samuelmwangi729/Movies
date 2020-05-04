@@ -11,22 +11,18 @@
                 <li>
                     <a href="#"><span>Top Categories <i class="fa fa-angle-down"></i></span></a>
                     <ul class="dropdown">
-                        <li><a href="./categories-list.html">Film &amp; Animation</a></li>
-                        <li><a href="./categories-grid.html">Automotive &amp; Vehicles</a></li>
-                        <li><a href="./typography.html">Music</a></li>
-                        <li><a href="./details-post-default.html">Pets &amp;Animals</a></li>
-                        <li><a href="./details-post-gallery.html">Sports</a></li>
-                        <li><a href="./details-post-review.html">Travel &amp; Events</a></li>
-                        <li><a href="./contact.html">Gaming</a></li>
-                        <li><a href="./contact.html">People &amp; Blog</a></li>
-                        <li><a href="./contact.html">Commedy</a></li>
+                        <ul class="dropdown">
+                            @foreach($categories as $category)
+                            <li><a  id="category" href="{{ route('category.find',[$category->CategoryName]) }}" style="font-size:10px !important">{{ $category->CategoryName }}</a></li>
+                            @endforeach
+                        </ul>
                     </ul>
                 </li>
                 <li><a href="#">Videos <i class="fa fa-angle-down"></i></a>
                     <ul class="dropdown">
-                        <li><a href="#">Top Rated</a></li>
-                        <li><a href="#">Trending</a></li>
-                        <li><a href="#">New</a></li>
+                        <li><a id="category"  style="font-size:10px !important" href="#">Top Rated</a></li>
+                        <li><a id="category" style="font-size:10px !important" href="#">Trending</a></li>
+                        <li><a id="category" style="font-size:10px !important" href="#">New</a></li>
                     </ul>
                 </li>
             </ul>
@@ -102,7 +98,7 @@
                                 <div class="mw-post">
                                     <div class="mw-post-item" >
                                         <div class="mw-pic">
-                                            <img src="img/megamenu/mm-1.jpg" alt="">
+                                            <img src="{{ asset('img/megamenu/mm-1.jpg') }}" alt="">
                                         </div>
                                         <div class="mw-text">
                                             <h6><a href="#">The Adventures of sinbird</a></h6>
@@ -114,7 +110,7 @@
                                     </div>
                                     <div class="mw-post-item">
                                         <div class="mw-pic">
-                                            <img src="img/megamenu/mm-2.jpg" alt="">
+                                            <img src="{{ asset('img/megamenu/mm-2.jpg') }}" alt="">
                                         </div>
                                         <div class="mw-text">
                                             <h6><a href="#">Aliens Vs Ninjas</a>
@@ -127,7 +123,7 @@
                                     </div>
                                     <div class="mw-post-item">
                                         <div class="mw-pic">
-                                            <img src="img/megamenu/mm-3.jpg" alt="">
+                                            <img src="{{ asset('img/megamenu/mm-3.jpg') }}" alt="">
                                         </div>
                                         <div class="mw-text">
                                             <h6><a href="#">The Machine Girl</a>
@@ -140,7 +136,7 @@
                                     </div>
                                     <div class="mw-post-item">
                                         <div class="mw-pic">
-                                            <img src="img/megamenu/mm-4.jpg" alt="">
+                                            <img src="{{ asset('img/megamenu/mm-4.jpg') }}" alt="">
                                         </div>
                                         <div class="mw-text">
                                             <h6><a href="#">Azumi</a></h6>
@@ -152,7 +148,7 @@
                                     </div>
                                     <div class="mw-post-item">
                                         <div class="mw-pic">
-                                            <img src="img/megamenu/mm-5.jpg" alt="">
+                                            <img src="{{ asset('img/megamenu/mm-5.jpg') }}" alt="">
                                         </div>
                                         <div class="mw-text">
                                             <h6><a href="#">Spiderman- Far From Home</a>
@@ -169,22 +165,16 @@
                         <li>
                             <a href="#"><span>Top Categories <i class="fa fa-angle-down"></i></span></a>
                             <ul class="dropdown">
-                                <li><a href="./categories-list.html">Film &amp; Animation</a></li>
-                                <li><a href="./categories-grid.html">Automotive &amp; Vehicles</a></li>
-                                <li><a href="./typography.html">Music</a></li>
-                                <li><a href="./details-post-default.html">Pets &amp;Animals</a></li>
-                                <li><a href="./details-post-gallery.html">Sports</a></li>
-                                <li><a href="./details-post-review.html">Travel &amp; Events</a></li>
-                                <li><a href="./contact.html">Gaming</a></li>
-                                <li><a href="./contact.html">People &amp; Blog</a></li>
-                                <li><a href="./contact.html">Commedy</a></li>
+                                @foreach($categories as $category)
+                                <li><a  id="category" href="{{ route('category.find',[$category->CategoryName]) }}" style="font-size:10px !important">{{ $category->CategoryName }}</a></li>
+                                @endforeach
                             </ul>
                         </li>
                         <li><a href="#"><span>Videos <i class="fa fa-angle-down"></i></span></a>
                             <ul class="dropdown">
-                                <li><a href="#">Top Rated</a></li>
-                                <li><a href="#">Trending</a></li>
-                                <li><a href="#">New</a></li>
+                                <li><a id="category"  style="font-size:10px !important" href="#">Top Rated</a></li>
+                                <li><a id="category" style="font-size:10px !important" href="#">Trending</a></li>
+                                <li><a id="category" style="font-size:10px !important" href="#">New</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -193,3 +183,17 @@
         </div>
     </header>
     <!-- Header End -->
+    @if($errors->all())
+    <div class="alert alert-danger" style="background-color:yellow !important">
+        <a href="#" class="close" data-dismiss="alert">&times;</a>
+        @foreach ($errors->all() as $error)
+        <span>{{ $error }}</span><br>
+        @endforeach
+    </div>
+    @endif
+    @if(Session::has('error'))</br>
+    <div class="alert alert-danger text-center" style="background-color:yellow !important">
+        <a href="#" class="close" data-dismiss="alert">&times;</a>
+        <i class="fa fa-times-circle" style="color:red"></i>&nbsp;{{ Session::get('error') }}
+    </div>
+    @endif
