@@ -21,7 +21,16 @@
                             <p>Please Subscribe for ${{ $Price }} per month to enjoy this Category</p>
                         </div>
                         <div class="col-sm-8 col-sm-offset-6">
-                            <form>
+                            <form action='https://www.2checkout.com/checkout/purchase' method='post'>
+                                <input type='hidden' name='sid' value='1303908' />
+                                <input type='hidden' name='mode' value='2CO' />
+                                <input type='hidden' name='li_0_type' value='product' />
+                                <input type='hidden' name='li_0_name' value='Monthly Subscription' />
+                                <input type='hidden' name='li_0_price' value='{{ $Price }}' />
+                                <input type='hidden' name='li_0_recurrence' value='1 Month' />
+                                <input name='submit' type='submit' value='Subscribe' class="btn btn-warning" />
+                              </form>
+                            {{-- <form>
                                 <fieldset>
                                     <legend style="color:white;border:2px solid red" class="text-center">
                                       <i class="fa fa-credit-card" style="color:blue"></i>&nbsp;Pay With Card
@@ -44,7 +53,7 @@
                                     </div><br>
                                     <button class="btn btn-warning btn-sm btn-block">Pay</button>
                                 </fieldset>
-                            </form>
+                            </form> --}}
                         </div>
                     </div>
                 </div>

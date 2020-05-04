@@ -21,30 +21,15 @@
                             <p>Please Renew for ${{ $Price }} to Continue  enjoying Videos in this Category</p>
                         </div>
                         <div class="col-sm-8 col-sm-offset-6">
-                            <form>
-                                <fieldset>
-                                    <legend style="color:white;border:2px solid red" class="text-center">
-                                      <i class="fa fa-credit-card" style="color:blue"></i>&nbsp;Pay With Card
-                                    </legend>
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                            <div class="form-group">
-                                                <label style="color:white" for="CardNumber" class="label-control"><i class="fa fa-tags"></i>&nbsp;Card Number</label>
-                                                <input type="number" class="form-control input-sm" name="CardNumber" placeholder="eg. 1111222233334444">
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                           <label style="color:white" for="cvv" class="label-control"><i class="fa fa-id-card"></i>&nbsp;CVV Number</label>
-                                           <input type="number" class="form-control input-sm" name="Cvv" placeholder="eg.765">
-                                        </div>
-                                        <div class="col-sm-6">
-                                           <label style="color:white" for="expiry" class="label-control"><i class="fa fa-calendar">&nbsp;</i>Expiry Date</label>
-                                           <input type="date" name="ExpiryDate" class="form-control">
-                                        </div>
-                                    </div><br>
-                                    <button class="btn btn-warning btn-sm btn-block" style="font-size:15px;font-weight:bold;">Renew Subscription</button>
-                                </fieldset>
-                            </form>
+                            <form action='https://www.2checkout.com/checkout/purchase' method='post'>
+                                <input type='hidden' name='sid' value='1303908' />
+                                <input type='hidden' name='mode' value='2CO' />
+                                <input type='hidden' name='li_0_type' value='product' />
+                                <input type='hidden' name='li_0_name' value='Monthly Subscription' />
+                                <input type='hidden' name='li_0_price' value='{{ $Price }}' />
+                                <input type='hidden' name='li_0_recurrence' value='1 Month' />
+                                <input name='submit' type='submit' value='Renew' class="btn btn-warning" />
+                              </form>
                         </div>
                     </div>
                 </div>
