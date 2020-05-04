@@ -2,6 +2,9 @@
 <!DOCTYPE html>
 <html lang="zxx">
 @include('layouts.header')
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5eaf8aaf95612e10"></script>
+
 <body>
     @include('layouts.nav')
     <!-- Details Post Section Begin -->
@@ -19,10 +22,6 @@
                         </div>
                         <div class="dt-desc">
                             <p><button class="btn btn-sm btn-flat" style="background-color:red;color:white"><i class="fa fa-thumbs-up"></i>Like</button>&nbsp;
-                                <button class="btn btn-sm btn-flat" style="background-color:#4943cf;color:white"><i class="fa fa-share-alt"></i>&nbsp;Share</button>
-                                <button class="btn btn-sm btn-flat" style="background-color:green;color:white"><i class="fa fa-whatsapp"></i>Whatsapp</button>&nbsp;
-                                <button class="btn btn-sm btn-flat" style="background-color:#4943cf;color:white"><i class="fa fa-facebook"></i>&nbsp;Share</button>
-                                <span style="background-color:#4943cf;color:white"><i class="fa fa-clipboard">Copy Link</i>&nbsp;{{ url($video->VideoSlug) }}</span>
 
                             </p>
                         </div>
@@ -80,5 +79,25 @@
             </div>
         </div>
     </section>
+    <div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://vildstream.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     <!-- Details Post Section End -->
 @include('layouts.footer')
