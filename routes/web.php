@@ -83,5 +83,8 @@ Route::group(['middleware' => ['auth']], function () {
         'uses'=>'HomeController@update',
         'as'=>'account.update'
     ]);
-
 });
+Route::Post('/Reset/Password',[
+    'uses'=>'IndexController@reset',
+    'as'=>'reset'
+]);

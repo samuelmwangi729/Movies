@@ -64,6 +64,7 @@
                                 @else
                                 <li class="signup-switch signup-open"><i class="fa fa-user-plus"></i>Sign up</li>
                                 <li class="signin-switch signin-open" id="signin"><i class="fa fa-sign-in"></i>Sign In</li>
+                                <li class="forgot-switch forgot-open" id="forgot" data-toggle="modal" data-target="#modal-default"><i class="fa fa-check-circle"></i>Forgot Password</li>
                                 @endif
                             </ul>
                         </div>

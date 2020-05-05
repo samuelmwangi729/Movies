@@ -105,6 +105,7 @@
                                 <div class="row">
                                     <div class="un-slider owl-carousel">
                                         <div class="col-lg-12">
+                                            @if($poster->count()>0)
                                             <div class="un-big-item set-bg" data-setbg="{{asset($poster[0]->VideoPoster)}}">
                                                 <div class="ub-text">
                                                     <div class="label"><span>Latest</span></div>
@@ -116,6 +117,8 @@
                                                     </ul>
                                                 </div>
                                             </div>
+                                            @else
+                                            @endif
                                         </div>
                                     </div>
                                 </div>

@@ -144,7 +144,36 @@
             </div>
         </div>
     </div>
-    <!-- Sign Up Section End -->
+    <div class="modal fade" id="modal-default">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color:#9d0303;">
+              <h4 class="modal-title text-center" style="color:white;font-weight:bold">Reset Your Password</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <div class="form">
+                    <form action="{{route('reset')}}"  method="post" class="signin-form">
+                        @csrf
+                        <div class="container" >
+                            <input type="email" class="form-control" name="Email" placeholder="Email Address">
+                            <br><button type="submit" class="btn btn-success"><span>Reset</span></button>
+                        </div><br>
+
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+    <!--forgot section-->
 
     <!-- Search model Begin -->
     <div class="search-model">

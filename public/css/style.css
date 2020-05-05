@@ -795,6 +795,9 @@ ol {
 .ht-options .ht-widget ul li.signin-open {
 	cursor: pointer;
 }
+.ht-options .ht-widget ul li.forgot-open {
+	cursor: pointer;
+}
 
 .ht-options .ht-widget ul li i {
 	font-size: 14px;
