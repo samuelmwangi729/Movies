@@ -16,12 +16,25 @@
                         <div class="dt-breadcrumb">
                             <div class="dt-bread-option">
                                 <a href="#">Home</a>
-                                <span>Review</span>
+                                <span>Preview</span>
                             </div>
                             <h3>{{ $video->VideoTitle }}</h3>
                         </div>
                         <div class="dt-desc">
-                            <p><button class="btn btn-sm btn-flat" style="background-color:red;color:white"><i class="fa fa-thumbs-up"></i>Like</button>&nbsp;
+                            <p>
+                                @if($isLiked==0)
+                                <form method="post" action="{{ route('video.like',[$video->VideoSlug]) }}">
+                                    @csrf
+                                    <button class="btn btn-sm btn-flat" style="background-color:red;color:white"><i class="fa fa-thumbs-up"></i>&nbsp;Like </button>
+                                </form>
+                                @else
+                                <div class="alert alert-success">
+                                    <a href="#" class="close" data-dismiss="alert">&timesbar;</a>
+                                    <strong>Thanks For Liking the Video</strong>
+                                </div>
+                                @endif
+                                &nbsp;<br>
+                                <button class="btn btn-sm btn-secondary disabled"><i class="fa fa-thumbs-up"></i>&nbsp;{{ $video->Likes }} likes</button>
 
                             </p>
                         </div>

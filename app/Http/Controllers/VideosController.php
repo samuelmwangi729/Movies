@@ -8,6 +8,8 @@ use Session;
 use App\Video;
 use Auth;
 use Str;
+use App\Likes;
+
 class VideosController extends Controller
 {
     /**
@@ -20,8 +22,10 @@ class VideosController extends Controller
         $categories=Category::all();
         $videos=Video::all();
         $VideosCount=Video::count();
+        $featured=Video::orderBy('id','desc')->get()->take(5);
         return view('Videos.Index')
         ->with('videos',$videos)
+        ->with('featured',$featured)
         ->with('catgories',$categories);
     }
 
@@ -30,9 +34,18 @@ class VideosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function like($url)
     {
-        //
+       $video=Video::where('VideoSlug','=',$url)->get()->first();
+       $Likes=$video->Likes;
+       $video->Likes=$Likes+1;
+       $video->save();
+       Likes::create([
+           'SubscriberEmail'=>Auth::user()->email,
+           'VideoUrl'=>$url
+       ]);
+       Session::flash('success','You have Successfully Liked the Video');
+       return redirect()->back();
     }
 
     /**

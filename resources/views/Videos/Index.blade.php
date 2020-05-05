@@ -43,7 +43,7 @@
                     <td>{{ $video->VideoCategory }}</td>
                     <td><a href="{{ url('Play/'.$video->VideoSlug) }}"><i class="fa fa-play" style="color:red"></i>&nbsp;Play Video</a></td>
                     <td>{{ $video->Views }}</td>
-                    <td><a href="{{ route('video.edit',[$video->VideoSlug]) }}" class="fa fa-edit btn btn-primary btn-sm"></a>&nbsp;<a href="{{ route('video.delete',[$video->VideoSlug]) }}" class="fa fa-trash-alt btn btn-danger btn-sm"></a>&nbsp;</td>
+                    <td><a href="{{ route('video.edit',[$video->VideoSlug]) }}" class="fa fa-edit btn btn-primary btn-sm"></a>&nbsp;@if(Auth::user()->isAdmin==1) <a href="{{ route('video.delete',[$video->VideoSlug]) }}" class="fa fa-trash-alt btn btn-danger btn-sm"></a>&nbsp;@endif</td>
                   </tr>
                 @endforeach
                 <tr>

@@ -20,9 +20,9 @@
                 </li>
                 <li><a href="#">Videos <i class="fa fa-angle-down"></i></a>
                     <ul class="dropdown">
-                        <li><a id="category"  style="font-size:10px !important" href="#">Top Rated</a></li>
-                        <li><a id="category" style="font-size:10px !important" href="#">Trending</a></li>
-                        <li><a id="category" style="font-size:10px !important" href="#">New</a></li>
+                        <li><a id="category"  style="font-size:10px !important" href="/">Top Rated</a></li>
+                        <li><a id="category" style="font-size:10px !important" href="/">Trending</a></li>
+                        <li><a id="category" style="font-size:10px !important" href="/">New</a></li>
                     </ul>
                 </li>
             </ul>
@@ -96,69 +96,22 @@
                         <li class="mega-menu"><a href="#"><span>Featured Videos <i class="fa fa-angle-down"></i></span></a>
                             <div class="megamenu-wrapper" style="margin-top:-150px">
                                 <div class="mw-post">
-                                    <div class="mw-post-item" >
-                                        <div class="mw-pic">
-                                            <img src="{{ asset('img/megamenu/mm-1.jpg') }}" alt="">
-                                        </div>
-                                        <div class="mw-text">
-                                            <h6><a href="#">The Adventures of sinbird</a></h6>
-                                            <ul>
-                                                <li><i class="fa fa-clock-o"></i> {{ date('y-M-Y') }}</li>
-                                                <li style="color:yellow"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half"></i></li>
-                                            </ul>
-                                        </div>
-                                    </div>
+                                    @foreach($featured as $feature)
                                     <div class="mw-post-item">
                                         <div class="mw-pic">
-                                            <img src="{{ asset('img/megamenu/mm-2.jpg') }}" alt="">
+                                            <img src="{{ asset($feature->VideoPoster) }}" alt="" height="132px" width="198px">
                                         </div>
                                         <div class="mw-text">
-                                            <h6><a href="#">Aliens Vs Ninjas</a>
+                                            <h6>
+                                                <a style="color:white" href="{{ route('video.review',[$feature->VideoSlug]) }}">{{ $feature->VideoTitle }}</a>
                                             </h6>
                                             <ul>
-                                                <li><i class="fa fa-clock-o"></i> {{ date('y-M-Y') }}</li>
+                                                <li><i class="fa fa-clock-o"></i> {{ ($feature->created_at)->toFormattedDateString() }}</li>
                                                 <li style="color:yellow"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half"></i></li>
                                             </ul>
                                         </div>
                                     </div>
-                                    <div class="mw-post-item">
-                                        <div class="mw-pic">
-                                            <img src="{{ asset('img/megamenu/mm-3.jpg') }}" alt="">
-                                        </div>
-                                        <div class="mw-text">
-                                            <h6><a href="#">The Machine Girl</a>
-                                            </h6>
-                                            <ul>
-                                                <li><i class="fa fa-clock-o"></i> {{ date('y-M-Y') }}</li>
-                                                <li style="color:yellow"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half"></i></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="mw-post-item">
-                                        <div class="mw-pic">
-                                            <img src="{{ asset('img/megamenu/mm-4.jpg') }}" alt="">
-                                        </div>
-                                        <div class="mw-text">
-                                            <h6><a href="#">Azumi</a></h6>
-                                            <ul>
-                                                <li><i class="fa fa-clock-o"></i> {{ date('y-M-Y') }}</li>
-                                                <li style="color:yellow"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half"></i></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="mw-post-item">
-                                        <div class="mw-pic">
-                                            <img src="{{ asset('img/megamenu/mm-5.jpg') }}" alt="">
-                                        </div>
-                                        <div class="mw-text">
-                                            <h6><a href="#">Spiderman- Far From Home</a>
-                                            </h6>
-                                            <ul>
-                                                <li><i class="fa fa-clock-o"></i> {{ date('y-M-Y') }}</li>
-                                                <li style="color:yellow"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half"></i></li>
-                                            </ul>
-                                        </div>
-                                    </div>
+                                    @endforeach
                                 </div>
                             </div>
                         </li>
@@ -172,9 +125,9 @@
                         </li>
                         <li><a href="#"><span>Videos <i class="fa fa-angle-down"></i></span></a>
                             <ul class="dropdown">
-                                <li><a id="category"  style="font-size:10px !important" href="#">Top Rated</a></li>
-                                <li><a id="category" style="font-size:10px !important" href="#">Trending</a></li>
-                                <li><a id="category" style="font-size:10px !important" href="#">New</a></li>
+                                <li><a id="category"  style="font-size:10px !important" href="/">Top Rated</a></li>
+                                <li><a id="category" style="font-size:10px !important" href="/">Trending</a></li>
+                                <li><a id="category" style="font-size:10px !important" href="/">New</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -195,5 +148,11 @@
     <div class="alert alert-danger text-center" style="background-color:yellow !important">
         <a href="#" class="close" data-dismiss="alert">&times;</a>
         <i class="fa fa-times-circle" style="color:red"></i>&nbsp;{{ Session::get('error') }}
+    </div>
+    @endif
+    @if(Session::has('success'))</br>
+    <div class="alert alert-success text-center" style="background-color:yellow !important">
+        <a href="#" class="close" data-dismiss="alert">&times;</a>
+        <i class="fa fa-times-circle" style="color:red"></i>&nbsp;{{ Session::get('success') }}
     </div>
     @endif

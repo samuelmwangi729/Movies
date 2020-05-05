@@ -6,6 +6,7 @@ use Session;
 use App\Video;
 use Auth;
 use App\CatSubscriber;
+use App\Likes;
 use Illuminate\Http\Request;
 
 class CategoriesController extends Controller
@@ -18,7 +19,10 @@ class CategoriesController extends Controller
     public function index()
     {
         $categories=Category::all();
-        return view('Categories.Index')->with('categories',$categories);
+        $featured=Video::orderBy('id','desc')->get()->take(5);
+        return view('Categories.Index')
+        ->with('featured',$featured)
+        ->with('categories',$categories);
     }
 
     /**
@@ -40,8 +44,10 @@ class CategoriesController extends Controller
         ])->get()->last();
         $cat=Category::where('CategoryName','=',$video->VideoCategory)->get()->first();
         $categoryPrice=$cat->Price;
+        $featured=Video::orderBy('id','desc')->get()->take(5);
         if(is_null($isSubscriber) || $isSubscriber->count() == 0){
            return view('Subscribe')
+           ->with('featured',$featured)
            ->with('Price',$categoryPrice)
            ->with('vidCategory',$video->VideoCategory)
            ->with('categories',$categories);
@@ -49,6 +55,7 @@ class CategoriesController extends Controller
         if($isSubscriber->Status==1){
             //subscription expired, renew
             return view('Renew')
+            ->with('featured',$featured)
             ->with('Price',$categoryPrice)
             ->with('vidCategory',$video->VideoCategory)
            ->with('categories',$categories);
@@ -56,7 +63,18 @@ class CategoriesController extends Controller
         $initialViews=$video->Views;
         $video->Views=$initialViews+1;
         $video->save();
+        $liked=Likes::where([
+            ['SubscriberEmail','=',Auth::user()->email],
+            ['VideoUrl','=',$id]
+        ])->get()->first();
+        if(is_null($liked)){
+            $isLiked=0;
+        }else{
+            $isLiked=1;
+        }
         return view('Review')
+        ->with('featured',$featured)
+        ->with('isLiked',$isLiked)
         ->with('categories',$categories)
         ->with('video',$video);
     }
@@ -97,8 +115,10 @@ class CategoriesController extends Controller
             Session::flash('error','No videos Under Such Category Uploaded');
             return redirect()->back();
         }
+        $featured=Video::orderBy('id','desc')->get()->take(5);
         $categories=Category::all();
         return view('Group')
+        ->with('featured',$featured)
         ->with('categories',$categories)
         ->with('videos',$videos);
     }

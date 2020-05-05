@@ -52,7 +52,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- Sidebar user panel (optional) -->
           <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-              <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+              <img  src="{{ asset('img/default.png') }}" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
               <a href="#" class="d-block">{{ Auth::user()->name }}</a>
@@ -72,7 +72,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   </p>
                 </a>
               </li>
-              <li class="nav-item has-treeview">
+             @if(Auth::user()->isAdmin==1)
+             <li class="nav-item has-treeview">
                 <a href="#" class="nav-link">
                   <i class="nav-icon fa fa-tags"></i>
                   <p>
@@ -89,6 +90,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   </li>
                 </ul>
               </li>
+             @endif
               <li class="nav-item has-treeview">
                 <a href="#" class="nav-link">
                   <i class="nav-icon fa fa-video"></i>
@@ -112,45 +114,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   </li>
                 </ul>
               </li>
-              <li class="nav-item has-treeview">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon fa fa-list"></i>
-                  <p>
-                    Subscriptions
-                    <i class="fas fa-angle-left right"></i>
-                  </p>
+              <li class="nav-item">
+                <a href="{{ route('account') }}" class="nav-link">
+                  <i class="fa fa-cog nav-icon"></i>
+                  <p>User Profile</p>
                 </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      <i class="fa fa-plus-circle nav-icon"></i>
-                      <p>Add Subscription</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      <i class="fa fa-eye nav-icon"></i>
-                      <p>Manage Subscription</p>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item has-treeview">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon fa fa-users"></i>
-                  <p>
-                    Subscribers
-                    <i class="fas fa-angle-left right"></i>
-                  </p>
-                </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      <i class="fa fa-eye nav-icon"></i>
-                      <p>View Subscribers</p>
-                    </a>
-                  </li>
-                </ul>
               </li>
               <li class="nav-item">
                 <a href="#" class="nav-link"  onclick="event.preventDefault();

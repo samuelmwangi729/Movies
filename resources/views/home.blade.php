@@ -31,9 +31,9 @@
                 <span class="info-box-icon bg-info elevation-1"><i class="fa fa-video"></i></span>
 
                 <div class="info-box-content">
-                  <span class="info-box-text">Videos</span>
+                  <span class="info-box-text">My Videos</span>
                   <span class="info-box-number">
-                    10
+                    {{ $mtVideo }}
                   </span>
                 </div>
                 <!-- /.info-box-content -->
@@ -47,7 +47,7 @@
 
                 <div class="info-box-content">
                   <span class="info-box-text">Likes</span>
-                  <span class="info-box-number">41,410</span>
+                  <span class="info-box-number">{{ $totalLikes }}</span>
                 </div>
                 <!-- /.info-box-content -->
               </div>
@@ -64,7 +64,7 @@
 
                 <div class="info-box-content">
                   <span class="info-box-text">Amount Spent</span>
-                  <span class="info-box-number"> $ 760</span>
+                  <span class="info-box-number"> $ {{ $totalAmount }}</span>
                 </div>
                 <!-- /.info-box-content -->
               </div>
@@ -76,8 +76,8 @@
                 <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
 
                 <div class="info-box-content">
-                  <span class="info-box-text">Subscribers</span>
-                  <span class="info-box-number">2,000</span>
+                  <span class="info-box-text">All Videos</span>
+                  <span class="info-box-number">{{ $totalVideos }}</span>
                 </div>
                 <!-- /.info-box-content -->
               </div>
@@ -108,35 +108,23 @@
                   <table class="table m-0">
                     <thead>
                     <tr>
-                      <th>Order ID</th>
                       <th>Category</th>
+                      <th>End Date</th>
                       <th>Status</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                      <td><a href="pages/examples/invoice.html">OR9842</a></td>
-                      <td>Call of Duty IV</td>
-                      <td><span class="badge badge-success">Completed</span></td>
-
-                    </tr>
-                    <tr>
-                      <td><a href="pages/examples/invoice.html">OR1848</a></td>
-                      <td>Science</td>
-                      <td><span class="badge badge-warning">Rejected</span></td>
-
-                    </tr>
-                    <tr>
-                      <td><a href="pages/examples/invoice.html">OR7429</a></td>
-                      <td>Education and Tech</td>
-                      <td><span class="badge badge-danger">Rejected</span></td>
-
-                    </tr>
-                    <tr>
-                      <td><a href="pages/examples/invoice.html">OR7429</a></td>
-                      <td>Lifestyle</td>
-                      <td><span class="badge badge-info">Processing</span></td>
-                    </tr>
+                        @foreach($histories as $history)
+                        <tr>
+                            <td>{{ $history->Category }}</td>
+                            <td>{{ $history->EndDate }}</td>
+                           @if($history->Status==0)
+                           <td><span class="badge badge-success">Completed</span></td>
+                           @else
+                           <td><span class="badge badge-danger">Expired</span></td>
+                           @endif
+                          </tr>
+                        @endforeach
                     </tbody>
                   </table>
                 </div>
@@ -185,7 +173,7 @@
 
                 <div class="info-box-content">
                   <span class="info-box-text">Views</span>
-                  <span class="info-box-number">114,381</span>
+                  <span class="info-box-number">{{ $totalViews }}</span>
                 </div>
                 <!-- /.info-box-content -->
               </div>
@@ -212,13 +200,9 @@
                         <div class="form-group">
                   <label>Choose A Category</label>
                   <select class="form-control select2 select2-danger" data-dropdown-css-class="select2-danger" style="width: 100%;">
-                    <option selected="selected">Alabama</option>
-                    <option>Alaska</option>
-                    <option>California</option>
-                    <option>Delaware</option>
-                    <option>Tennessee</option>
-                    <option>Texas</option>
-                    <option>Washington</option>
+                   @foreach($Allcategories as $ac)
+                   <option>{{ $ac->CategoryName}}</option>
+                   @endforeach
                   </select>
                 </div>
                 <!-- /.form-group -->

@@ -56,6 +56,10 @@ Route::group(['middleware' => ['auth']], function () {
         'uses'=>'VideosController@store',
         'as'=>'video.add'
     ]);
+    Route::post('/Videos/Like/{url}',[
+        'uses'=>'VideosController@like',
+        'as'=>'video.like'
+    ]);
     Route::post('/Videos/Update/{id}',[
         'uses'=>'VideosController@update',
         'as'=>'video.update'
@@ -67,6 +71,17 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/Videos/View/{id}',[
         'uses'=>'CategoriesController@show',
         'as'=>'video.review'
+    ]);
+    Route::get('/callback',[
+        'uses'=>'PaymentsController@index',
+    ]);
+    Route::get('/Account',[
+        'uses'=>'HomeController@account',
+        'as'=>'account'
+    ]);
+    Route::Post('/Account/Update',[
+        'uses'=>'HomeController@update',
+        'as'=>'account.update'
     ]);
 
 });

@@ -37,7 +37,7 @@
                 <tr>
                     <td><img src="{{ asset($category->CategoryImage) }}" width="30px" height="30px" style="border-radius:50px"></td>
                     <td>{{ $category->CategoryName }}</td>
-                    <td><a href="#" class="fa fa-edit btn btn-primary btn-sm"></a>&nbsp;<a href="{{ route('categories.delete',[$category->CategoryName]) }}" class="fa fa-trash-alt btn btn-danger btn-sm"></a>&nbsp;</td>
+                    <td><a href="{{ route('categories.delete',[$category->CategoryName]) }}" class="fa fa-trash-alt btn btn-danger btn-sm"></a>&nbsp;</td>
                   </tr>
                 @endforeach
                 <tr>

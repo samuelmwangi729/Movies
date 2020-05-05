@@ -22,14 +22,22 @@
                         </div>
                         <div class="col-sm-8 col-sm-offset-6">
                             <form action='https://www.2checkout.com/checkout/purchase' method='post'>
-                                <input type='hidden' name='sid' value='1303908' />
+                                @csrf
+
+                                <input type='hidden' name='sid' value='250351993131' />
+
                                 <input type='hidden' name='mode' value='2CO' />
-                                <input type='hidden' name='li_0_type' value='product' />
-                                <input type='hidden' name='li_0_name' value='Monthly Subscription' />
+
+                                <input type='hidden' name='li_0_name' value='{{ Auth::user()->name }}' />
+
                                 <input type='hidden' name='li_0_price' value='{{ $Price }}' />
-                                <input type='hidden' name='li_0_recurrence' value='1 Month' />
-                                <input name='submit' type='submit' value='Renew' class="btn btn-warning" />
-                              </form>
+
+                                <input type='hidden' name='demo' value='Y' />
+
+                                <input name='submit' type='submit' value='Checkout' />
+
+                                </form>
+
                         </div>
                     </div>
                 </div>
