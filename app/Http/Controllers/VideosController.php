@@ -191,6 +191,17 @@ class VideosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $video=Video::where([
+            'VideoSlug'=>$id,
+        ])->get()->first();
+        if(is_null($video) || empty($video)){
+            Session::flash('error','Video Does Not Exist');
+            return redirect()->back();
+        }
+        @unlink(public_path($video->VideoFile));
+        $idv=$video->id;
+        $video->destroy($idv);
+        Session::flash('success','Video Deleted Successfully');
+        return redirect()->back();
     }
 }
