@@ -8,6 +8,7 @@ use Auth;
 use App\CatSubscriber;
 use App\Likes;
 use Illuminate\Http\Request;
+use App\Views;
 
 class CategoriesController extends Controller
 {
@@ -60,9 +61,19 @@ class CategoriesController extends Controller
             ->with('vidCategory',$video->VideoCategory)
            ->with('categories',$categories);
         }
-        $initialViews=$video->Views;
-        $video->Views=$initialViews+1;
-        $video->save();
+        $isViewed=Views::where([
+            ['UserEmail','=',Auth::user()->email],
+            ['VideoUrl','=',$id]
+        ])->get();
+        if($isViewed->count()==0){
+            $initialViews=$video->Views;
+            $video->Views=$initialViews+1;
+            $video->save();
+            Views::create([
+                'UserEmail'=>Auth::user()->email,
+                'VideoUrl'=>$id,
+            ]);
+        }
         $liked=Likes::where([
             ['SubscriberEmail','=',Auth::user()->email],
             ['VideoUrl','=',$id]

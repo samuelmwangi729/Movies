@@ -47,12 +47,6 @@
                             </div>
                         @endforeach
                     </div>
-                    <div class="pagination-item">
-                        <a href="#"><span>1</span></a>
-                        <a href="#"><span>2</span></a>
-                        <a href="#"><span>3</span></a>
-                        <a href="#"><span>Next</span></a>
-                    </div>
                 </div>
                 <div class="col-lg-4 col-md-7 p-0">
                     <div class="sidebar-option">

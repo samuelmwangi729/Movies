@@ -36,6 +36,10 @@ Route::group(['middleware' => ['auth']], function () {
         'uses'=>'VideosController@index',
         'as'=>'videos.index'
     ]);
+    Route::get('/Trailers/Index/',[
+        'uses'=>'VideosController@trailer',
+        'as'=>'trailers.index'
+    ]);
     Route::get('/Videos/Delete/{id}',[
         'uses'=>'VideosController@destroy',
         'as'=>'videos.delete'
@@ -52,9 +56,17 @@ Route::group(['middleware' => ['auth']], function () {
         'uses'=>'VideosController@destroy',
         'as'=>'video.delete'
     ]);
+    Route::get('/Trailer/Delete/{id}',[
+        'uses'=>'VideosController@tdestroy',
+        'as'=>'trailer.delete'
+    ]);
     Route::post('/Videos/Add/',[
         'uses'=>'VideosController@store',
         'as'=>'video.add'
+    ]);
+    Route::post('/Trailer/Add/',[
+        'uses'=>'VideosController@tstore',
+        'as'=>'trailer.add'
     ]);
     Route::post('/Videos/Like/{url}',[
         'uses'=>'VideosController@like',

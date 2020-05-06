@@ -23,32 +23,20 @@
                         <div class="section-title">
                             <h5>Editor's Choice</h5>
                         </div>
+                        @foreach (App\Trailer::orderBy('id','asc')->get()->take(2) as $editor)
                         <div class="ec-item">
                             <div class="ec-pic">
-                                <img src="{{ asset('img/trending/editor-1.jpg') }}" alt="">
+                                <img src="{{ asset($editor->TrailerPoster) }}" alt="" width="120px" height="80px">
                             </div>
                             <div class="ec-text">
-                                <h6><a href="#">The Brother</a>
+                                <h6><a href="#">{{ $editor->TrailerTitle }}</a>
                                 </h6>
                                 <ul>
-                                    <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
-                                    <li><i class="fa fa-comment-o"></i> 12</li>
+                                    <li><i class="fa fa-clock-o"></i> {{ ($editor->created_at)->toFormattedDateString() }}</li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="ec-item">
-                            <div class="ec-pic">
-                                <img src="{{ asset('img/trending/editor-2.jpg') }}" alt="">
-                            </div>
-                            <div class="ec-text">
-                                <h6><a href="#">The Invasion</a>
-                                </h6>
-                                <ul>
-                                    <li><i class="fa fa-clock-o"></i> May 01, 2020</li>
-                                    <li><i class="fa fa-comment-o"></i> 12</li>
-                                </ul>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
@@ -57,17 +45,9 @@
                             <h5>Categories</h5>
                         </div>
                         <div class="tag-list">
-                            <a href="#"><span>Gaming</span></a>
-                            <a href="#"><span>People</span></a>
-                            <a href="#"><span>Moviews</span></a>
-                            <a href="#"><span>Education</span></a>
-                            <a href="#"><span>Technology</span></a>
-                            <a href="#"><span>Simulation</span></a>
-                            <a href="#"><span>Lifestyle</span></a>
-                            <a href="#"><span>Scientific</span></a>
-                            <a href="#"><span>References</span></a>
-                            <a href="#"><span>Role-playing</span></a>
-                            <a href="#"><span>Blogs</span></a>
+                            @foreach($categories as $category)
+                            <a  id="category" href="{{ route('category.find',[$category->CategoryName]) }}" style="font-size:10px !important">{{ $category->CategoryName }}</a>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -76,16 +56,8 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="ca-text"><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;{{ date('Y') }}All rights reserved |SmartSoft Kenya
+  Copyright &copy;{{ date('Y') }} All rights reserved |SmartSoft Kenya
   <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p></div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="ca-links">
-                            <a href="#">About</a>
-                            <a href="#">Subscribe</a>
-                            <a href="#">Contact</a>
-                            <a href="#">Support</a>
-                        </div>
                     </div>
                 </div>
             </div>

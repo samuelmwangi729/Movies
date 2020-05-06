@@ -9,6 +9,7 @@ use App\Video;
 use Auth;
 use Str;
 use App\Likes;
+use App\Trailer;
 
 class VideosController extends Controller
 {
@@ -27,6 +28,12 @@ class VideosController extends Controller
         ->with('videos',$videos)
         ->with('featured',$featured)
         ->with('catgories',$categories);
+    }
+    public function trailer()
+    {
+       $trailers=Trailer::all();
+        return view('Videos.Trailer')
+        ->with('trailers',$trailers);
     }
 
     /**
@@ -49,6 +56,40 @@ class VideosController extends Controller
     }
 
     /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function tstore(Request $request)
+    {
+        $this->validate($request,[
+            'TrailerTitle' =>'required|unique:trailers',
+            'TrailerDescription'=>'required',
+            'TrailerPoster' =>'required|mimes:png,jpeg,jpg',
+            'TrailerFile'=>'required|mimes:mp4,webm'
+        ]);
+        //handle the poster uploaded
+        $TrailerPoster=$request->TrailerPoster;
+        $newPosterName=time().$TrailerPoster->getClientOriginalName();
+        $TrailerPoster->move('TrailerPosters/',$newPosterName);
+        //handle the Trailer uploaded
+        $TrailerFile=$request->TrailerFile;
+        $newTrailerName=time().$TrailerFile->getClientOriginalName();
+        $TrailerFile->move('Trailers/',$newTrailerName);
+        Trailer::create([
+            'TrailerTitle'=>$request->TrailerTitle,
+            'TrailerSlug'=>Str::random(12),
+            'TrailerDescription'=>$request->TrailerDescription,
+            'TrailerPoster'=>'/TrailerPosters/'.$newPosterName,
+            'TrailerFile'=>'Trailers/'.$newTrailerName,
+            'PostedBy'=>Auth::user()->email,
+        ]);
+        Session::flash('success','Trailer Successfully Uploaded');
+        return redirect()->back();
+    }
+
+     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -83,6 +124,9 @@ class VideosController extends Controller
         Session::flash('success','Video Successfully Uploaded');
         return redirect()->back();
     }
+
+
+
 
     /**
      * Display the specified resource.
@@ -202,6 +246,29 @@ class VideosController extends Controller
         $idv=$video->id;
         $video->destroy($idv);
         Session::flash('success','Video Deleted Successfully');
+        return redirect()->back();
+    }
+     /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function tdestroy($id)
+    {
+        $trailer=Trailer::where([
+            'TrailerSlug'=>$id,
+        ])->get()->first();
+        if(is_null($trailer) || empty($trailer)){
+            Session::flash('error','Trailer Does Not Exist');
+            return redirect()->back();
+        }
+        // dd(url($trailer->TrailerFile));
+        @unlink(public_path($trailer->TrailerPoster));
+        @unlink(public_path($trailer->TrailerFile));
+        $idv=$trailer->id;
+        $trailer->destroy($idv);
+        Session::flash('success','Trailer Deleted Successfully');
         return redirect()->back();
     }
 }

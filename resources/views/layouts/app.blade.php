@@ -90,6 +90,23 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   </li>
                 </ul>
               </li>
+              <li class="nav-item has-treeview">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-trailer"></i>
+                  <p>
+                    Trailers
+                    <i class="fas fa-angle-left right"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="{{ route('trailers.index') }}" class="nav-link">
+                      <i class="fa fa-plus-circle nav-icon"></i>
+                      <p>Manage Movie Trailers</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
              @endif
               <li class="nav-item has-treeview">
                 <a href="#" class="nav-link">
