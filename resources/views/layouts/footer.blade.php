@@ -8,8 +8,7 @@
                         <div class="fa-logo">
             <a href="/" style="color:white;font-family: 'Times New Roman', Times, serif;font-size:40px;text-shadow: 2px 2px blue,4px 4px black !important">{{ config('app.name') }}</a>
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua lacus vel facilisis.</p>
+                        <p>{{config('app.name ')}} is a category based paid streaming service</p>
                         <div class="fa-social">
                             <a href="#"><i class="fa fa-facebook"></i></a>
                             <a href="#"><i class="fa fa-twitter"></i></a>
