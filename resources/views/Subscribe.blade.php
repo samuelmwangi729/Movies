@@ -21,30 +21,35 @@
                             <p>Please Subscribe for ${{ $Price }} per month to enjoy this Category</p>
                         </div>
                         <div class="col-sm-8 col-sm-offset-6">
-                            <form id="myCCForm" action="/callback" method="post">
+                            <form id="myCCForm" action="/callback" method="post" class="form-horizontal">
                                 @csrf
                                 <input id="token" name="token" type="hidden" value="">
-                                <div>
-                                    <label>
+                                <div class="form-group">
+                                    <label class="label-control" style="color:red;font-weight:bold"><i class="fa fa-credit-card"></i>
                                         <span>Card Number</span>
                                     </label>
-                                    <input id="ccNo" class="form-control" type="text" size="20" value="" autocomplete="off" required maxlength="16"/>
+                                    <input id="ccNo" class="form-control" type="text" size="20" value="" autocomplete="off" required maxlength="16" placeholder="Card Number"/>
                                 </div>
-                                <div>
-                                    <label>
-                                        <span>Expiration Date (MM/YYYY)</span>
+                                <div class="form-group">
+                                    <label class="label-control" style="color:red;font-weight:bold"> <i class="fa fa-calendar"></i>
+                                        Expiration Date (MM/YYYY)
                                     </label>
-                                    <input type="text" size="2" id="expMonth" maxlength="2" required />
-                                    <span> / </span>
-                                    <input type="text" size="2" id="expYear" maxlength="4" required />
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <input type="number" size="2" class="form-control input-sm" id="expMonth" maxlength="2" required placeholder="Expiry Month" />
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <input type="number" size="2" class="form-control input-sm" id="expYear" maxlength="4" required placeholder="Expiry Year" />
+                                        </div>
+                                    </div>
                                 </div>
-                                <div>
-                                    <label>
+                                <div class="form-group">
+                                    <label class="label-control" style="color:red;font-weight:bold"><i class="fa fa-tags"></i>
                                         <span>CVC</span>
                                     </label>
-                                    <input id="cvv" size="4" type="text" value="" autocomplete="off" required />
+                                    <input id="cvv" size="4" type="text" value="" class="form-control" autocomplete="off" required placeholder="the 3 numbers at the back of your card" />
                                 </div>
-                                <input type="submit" value="Submit Payment">
+                                <input type="submit" value="Submit Payment" class="btn btn-success btn-block">
                             </form>
 
                         </div>
@@ -84,8 +89,9 @@
                 </div>
             </div>
         </div>
-    </section>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    </section>    <!-- Details Post Section End -->
+@include('layouts.footer')
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="https://www.2checkout.com/checkout/api/2co.min.js"></script>
 
 <script>
@@ -113,7 +119,7 @@
         // Setup token request arguments
         var args = {
             sellerId: "901423410",
-            publishableKey: "B1D49618-E8CA-4223-8F1D-BFDCD3AD59C6",
+            publishableKey: "5C4786F6-E5F9-43C6-ADBD-2A4A1A6FD487",
             ccNo: $("#ccNo").val(),
             cvv: $("#cvv").val(),
             expMonth: $("#expMonth").val(),
@@ -137,5 +143,3 @@
         });
     });
 </script>
-    <!-- Details Post Section End -->
-@include('layouts.footer')

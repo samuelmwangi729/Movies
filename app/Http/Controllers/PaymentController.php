@@ -8,8 +8,8 @@ use Illuminate\Http\Request;
 
 class PaymentController extends Controller
 {
-    public function index(Request $request){
-        Twocheckout::privateKey('CBA15AB1-06CE-4DD7-BCF9-BB4401FBF9E2'); //Private Key
+    public function index(){
+        Twocheckout::privateKey('F0BBF918-4961-4FE8-97DD-6F9540C45A4B'); //Private Key
         Twocheckout::sellerId('901423410'); // 2Checkout Account Number
         Twocheckout::sandbox(true); // Set to false for production accounts.
 
