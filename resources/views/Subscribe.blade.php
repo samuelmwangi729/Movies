@@ -21,23 +21,31 @@
                             <p>Please Subscribe for ${{ $Price }} per month to enjoy this Category</p>
                         </div>
                         <div class="col-sm-8 col-sm-offset-6">
-                            <form action='https://www.2checkout.com/checkout/purchase' method='post'>
-                                <input type='hidden' name='sid' value='901423410' />
-                                <input type='hidden' name='mode' value='2CO' />
-                                <input type='hidden' name='li_0_type' value='product' />
-                                <input type='hidden' name='li_0_name' value='invoice123' />
-                                <input type='hidden' name='li_0_price' value='25.99' />
-                                <input type='hidden' name='card_holder_name' value='Checkout Shopper' />
-                                <input type='hidden' name='street_address' value='123 Test Address' />
-                                <input type='hidden' name='street_address2' value='Suite 200' />
-                                <input type='hidden' name='city' value='Columbus' />
-                                <input type='hidden' name='state' value='OH' />
-                                <input type='hidden' name='zip' value='43228' />
-                                <input type='hidden' name='country' value='USA' />
-                                <input type='hidden' name='email' value='example@2co.com' />
-                                <input type='hidden' name='phone' value='614-921-2450' />
-                                <input name='submit' type='submit' value='Checkout' />
-                                </form>
+                            <form id="myCCForm" action="/callback" method="post">
+                                @csrf
+                                <input id="token" name="token" type="hidden" value="">
+                                <div>
+                                    <label>
+                                        <span>Card Number</span>
+                                    </label>
+                                    <input id="ccNo" class="form-control" type="text" size="20" value="" autocomplete="off" required maxlength="16"/>
+                                </div>
+                                <div>
+                                    <label>
+                                        <span>Expiration Date (MM/YYYY)</span>
+                                    </label>
+                                    <input type="text" size="2" id="expMonth" maxlength="2" required />
+                                    <span> / </span>
+                                    <input type="text" size="2" id="expYear" maxlength="4" required />
+                                </div>
+                                <div>
+                                    <label>
+                                        <span>CVC</span>
+                                    </label>
+                                    <input id="cvv" size="4" type="text" value="" autocomplete="off" required />
+                                </div>
+                                <input type="submit" value="Submit Payment">
+                            </form>
 
                         </div>
                     </div>
@@ -77,6 +85,57 @@
             </div>
         </div>
     </section>
-    <script src="https://www.2checkout.com/static/checkout/javascript/direct.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="https://www.2checkout.com/checkout/api/2co.min.js"></script>
+
+<script>
+    // Called when token created successfully.
+    var successCallback = function(data) {
+        var myForm = document.getElementById('myCCForm');
+
+        // Set the token as the value for the token input
+        myForm.token.value = data.response.token.token;
+
+        // IMPORTANT: Here we call `submit()` on the form element directly instead of using jQuery to prevent and infinite token request loop.
+        myForm.submit();
+    };
+
+    // Called when token creation fails.
+    var errorCallback = function(data) {
+        if (data.errorCode === 200) {
+            tokenRequest();
+        } else {
+            alert(data.errorMsg);
+        }
+    };
+
+    var tokenRequest = function() {
+        // Setup token request arguments
+        var args = {
+            sellerId: "901423410",
+            publishableKey: "B1D49618-E8CA-4223-8F1D-BFDCD3AD59C6",
+            ccNo: $("#ccNo").val(),
+            cvv: $("#cvv").val(),
+            expMonth: $("#expMonth").val(),
+            expYear: $("#expYear").val()
+        };
+
+        // Make the token request
+        TCO.requestToken(successCallback, errorCallback, args);
+    };
+
+    $(function() {
+        // Pull in the public encryption key for our environment
+        TCO.loadPubKey('sandbox');
+
+        $("#myCCForm").submit(function(e) {
+            // Call our token request function
+            tokenRequest();
+
+            // Prevent form from submitting
+            return false;
+        });
+    });
+</script>
     <!-- Details Post Section End -->
 @include('layouts.footer')
