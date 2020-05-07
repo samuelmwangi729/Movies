@@ -1,5 +1,5 @@
 <?php
-namespace App\Http\Controllers\Payments\Twocheckout;
+namespace App\Http\Controllers\Payments;
 
 use App\Http\Controllers\Payments\Twocheckout;
 use App\Http\Controllers\Payments\Twocheckout_Util;
