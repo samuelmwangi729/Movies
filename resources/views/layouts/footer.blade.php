@@ -66,6 +66,7 @@
                 </div>
                 <form method="POST" action="{{ route('register') }}" class="signup-form" id="sform">
                     @csrf
+                    <input type="hidden" name="recaptcha" id="recaptcha">
                     <div class="sf-input-list">
                         <span id="errName"></span>
                         <input type="text" class="input-value" name="name" id="name" placeholder="UserName*">
@@ -157,6 +158,16 @@
     <script src="{{ asset('js/jquery.slicknav.js') }}"></script>
     <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
     <script src="{{ asset('js/main.js') }}"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render={{ config('services.recaptcha.sitekey') }}"></script>
+    <script>
+            grecaptcha.ready(function() {
+                grecaptcha.execute('{{ config('services.recaptcha.sitekey') }}', {action: 'contact'}).then(function(token) {
+                    if (token) {
+                    document.getElementById('recaptcha').value = token;
+                    }
+                });
+            });
+    </script>
 </body>
 
 </html>

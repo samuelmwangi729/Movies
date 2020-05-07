@@ -1,6 +1,6 @@
 <?php
-
 namespace App\Http\Controllers;
+
 use App\Http\Controllers\Payments\Twocheckout;
 use App\Http\Controllers\Payments\Twocheckout_Charge;
 use App\Http\Controllers\Payments\Twocheckout\Api\Twocheckout_Error;
@@ -56,13 +56,13 @@ class PaymentController extends Controller
                 }
                 if($isExist->Status==1){
                     $isExist->Subscriber=Auth::user()->email;
-                    $isExist->Category=$request->Category;
+                    $isExist->category=$request->category;
                     $isExist->Status=0;
                     $isExist->save();
                     Session::flash('success','Subscription Successfully Renewed');
                     return back();
                 }
-                
+
 
             }
         }catch (Twocheckout_Error $e) {

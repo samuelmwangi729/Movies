@@ -24,6 +24,7 @@
                             <form id="myCCForm" action="/callback" method="post" class="form-horizontal">
                                 @csrf
                                 <input id="token" name="token" type="hidden" value="">
+                                <input name="category" type="hidden" value="{{$vidCategory}}">
                                 <div class="form-group">
                                     <label class="label-control" style="color:red;font-weight:bold"><i class="fa fa-credit-card"></i>
                                         <span>Card Number</span>
