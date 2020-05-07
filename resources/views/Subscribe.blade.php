@@ -21,30 +21,24 @@
                             <p>Please Subscribe for ${{ $Price }} per month to enjoy this Category</p>
                         </div>
                         <div class="col-sm-8 col-sm-offset-6">
-                            <form id="myCCForm" action="payment.php" method="post">
-                                <input id="token" name="token" type="hidden" value="">
-                                <div>
-                                    <label>
-                                        <span>Card Number</span>
-                                    </label>
-                                    <input id="ccNo" type="text" size="20" value="" autocomplete="off" required />
-                                </div>
-                                <div>
-                                    <label>
-                                        <span>Expiration Date (MM/YYYY)</span>
-                                    </label>
-                                    <input type="text" size="2" id="expMonth" required />
-                                    <span> / </span>
-                                    <input type="text" size="2" id="expYear" required />
-                                </div>
-                                <div>
-                                    <label>
-                                        <span>CVC</span>
-                                    </label>
-                                    <input id="cvv" size="4" type="text" value="" autocomplete="off" required />
-                                </div>
-                                <input type="submit" value="Submit Payment">
-                            </form>
+                            <form action='https://www.2checkout.com/checkout/purchase' method='post'>
+                                <input type='hidden' name='sid' value='901423410' />
+                                <input type='hidden' name='mode' value='2CO' />
+                                <input type='hidden' name='li_0_type' value='product' />
+                                <input type='hidden' name='li_0_name' value='invoice123' />
+                                <input type='hidden' name='li_0_price' value='25.99' />
+                                <input type='hidden' name='card_holder_name' value='Checkout Shopper' />
+                                <input type='hidden' name='street_address' value='123 Test Address' />
+                                <input type='hidden' name='street_address2' value='Suite 200' />
+                                <input type='hidden' name='city' value='Columbus' />
+                                <input type='hidden' name='state' value='OH' />
+                                <input type='hidden' name='zip' value='43228' />
+                                <input type='hidden' name='country' value='USA' />
+                                <input type='hidden' name='email' value='example@2co.com' />
+                                <input type='hidden' name='phone' value='614-921-2450' />
+                                <input name='submit' type='submit' value='Checkout' />
+                                </form>
+
                         </div>
                     </div>
                 </div>
@@ -83,5 +77,6 @@
             </div>
         </div>
     </section>
+    <script src="https://www.2checkout.com/static/checkout/javascript/direct.min.js"></script>
     <!-- Details Post Section End -->
 @include('layouts.footer')
