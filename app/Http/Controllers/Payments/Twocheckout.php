@@ -4,8 +4,8 @@ abstract class Twocheckout
 {
     public static $sid;
     public static $privateKey;
-    public static $username;
-    public static $password;
+    public static $username="demotestuser";
+    public static $password="demotestuser";
     public static $sandbox;
     public static $verifySSL = true;
     public static $baseUrl = 'https://www.2checkout.com';
