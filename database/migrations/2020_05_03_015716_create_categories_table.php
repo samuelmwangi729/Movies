@@ -17,7 +17,7 @@ class CreateCategoriesTable extends Migration
             $table->bigIncrements('id');
             $table->string('CategoryImage');
             $table->string('CategoryName');
-            $table->string('Price')->default(0.5);
+            $table->string('Price')->default(1);
             $table->string('Status')->default(0);
             $table->timestamps();
         });
