@@ -22,7 +22,7 @@ class PaymentController extends Controller
         try {
             $charge = Twocheckout_Charge::auth(array(
                 "merchantOrderId" => "123",
-                "token"      => $_POST['token'],
+                "token"      => $request->token,
                 "currency"   => 'USD',
                 "total"      => '1',
                 "billingAddr" => array(
