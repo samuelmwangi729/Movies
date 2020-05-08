@@ -14,7 +14,7 @@ class PaymentController extends Controller
         Twocheckout::privateKey('5EE6AC35-CC52-4714-A3A3-B810EA1B2DEF'); //Private Key
         Twocheckout::sellerId('250350404436'); // 2Checkout Account Number
         Twocheckout::username('vildstream');
-        Twocheckout::password('P123four5sam');
+        Twocheckout::password('P1@3four5sam');
         Twocheckout::sandbox(false); // Set to false for production accounts.
 
 
