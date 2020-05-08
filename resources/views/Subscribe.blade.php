@@ -62,10 +62,10 @@
                                             </label>
                                         </div>
                                     </div>
-                                    <div class="col-sm-6">  
+                                    <div class="col-sm-6">
                                         <input name="category" type="hidden" value="{{$vidCategory}}">
                                         <input id="token" name="token" type="hidden" value="">
-                                         
+
                                         <div class="form-group">
                                             <label class="label-control" style="color:red;font-weight:bold"><i class="fa fa-phone"></i>
                                                 <span>Phone Number</span>
@@ -168,8 +168,8 @@
     var tokenRequest = function() {
         // Setup token request arguments
         var args = {
-            sellerId: "901423410",
-            publishableKey: "5C4786F6-E5F9-43C6-ADBD-2A4A1A6FD487",
+            sellerId: "250350404436",
+            publishableKey: "50AA7218-045D-41FA-AE31-FB67B37DF338",
             ccNo: $("#ccNo").val(),
             cvv: $("#cvv").val(),
             expMonth: $("#expMonth").val(),
