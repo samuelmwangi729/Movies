@@ -5,6 +5,12 @@
  <div class="content-wrapper">
      <!-- Content Header (Page header) -->
     <div class="content-header">
+        @if(Session::has('error'))</br>
+        <div class="alert alert-danger text-center" style="background-color:yellow !important">
+            <a href="#" class="close" data-dismiss="alert">&times;</a>
+            <i class="fa fa-times-circle" style="color:red"></i>&nbsp;{{ Session::get('error') }}
+        </div>
+        @endif
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
@@ -135,8 +141,8 @@
                   <!-- <button type="button" class="btn btn-default" >
                   Launch Default Modal
                 </button> -->
-                <a href="javascript:void(0)" class="btn btn-sm btn-info float-left" data-toggle="modal" data-target="#modal-default">Place New Order</a>
-                <a href="javascript:void(0)" class="btn btn-sm btn-danger float-right" id="view">View All Order</a>
+                {{-- <a href="javascript:void(0)" class="btn btn-sm btn-info float-left" data-toggle="modal" data-target="#modal-default">Place New Order</a> --}}
+                {{-- <a href="javascript:void(0)" class="btn btn-sm btn-danger float-right" id="view">View All Order</a> --}}
               </div>
               <!-- /.card-footer -->
             </div>
@@ -163,7 +169,7 @@
 
                 <div class="info-box-content">
                   <span class="info-box-text">My Categories</span>
-                  <span class="info-box-number">1/ {{ $categories }}</span>
+                  <span class="info-box-number">{{ $subscribed->count() }}/ {{ $categories }}</span>
                 </div>
                 <!-- /.info-box-content -->
               </div>

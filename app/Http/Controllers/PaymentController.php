@@ -47,16 +47,22 @@ class PaymentController extends Controller
                     ['Category','=',$request->category]
                 ])->get()->first();
                 if(is_null($isExist) || $isExist->count()==0){
+                    $today=date('Y-m-d');
+                    $endDate=date('Y-m-d',strtotime($today. '+30 days'));
                     CatSubscriber::create([
                         'Subscriber'=>Auth::user()->email,
-                        'Category'=>$request->category
+                        'Category'=>$request->category,
+                        'EndDate'=>$endDate
                     ]);
                     Session::flash('success','Payments Successfully Received, You are now Susbcribed');
                     return back();
                 }
                 if($isExist->Status==1){
+                    $today=date('Y-m-d');
+                    $endDate=date('Y-m-d',strtotime($today. '+30 days'));
                     $isExist->Subscriber=Auth::user()->email;
                     $isExist->category=$request->category;
+                    $isExist->EndDate=$endDate;
                     $isExist->Status=0;
                     $isExist->save();
                     Session::flash('success','Subscription Successfully Renewed');

@@ -27,6 +27,17 @@ class HomeController extends Controller
      */
     public function index()
     {
+        //get all the subscribed categories by the user 
+        $subscribed=CatSubscriber::where('Subscriber',Auth::user()->email)->get();
+        if(count($subscribed)>0){
+            for($i=0;$i<count($subscribed);$i++){
+                if($subscribed[$i]->EndDate <= date('Y-m-d')){
+                    $subscribed[$i]->Status=1;
+                    $subscribed[$i]->save();
+                    Session::flash('error','Your Subscription to some categories has expired. Please consider Renewing it.');
+                }
+            }
+        }
         $categories=Category::count();
         $Allcategories=Category::all();
         $likes=Video::where([
@@ -58,6 +69,7 @@ class HomeController extends Controller
         ->with('histories',$history)
         ->with('totalVideos',$videos)
         ->with('categories',$categories)
+        ->with('subscribed',$subscribed)
         ->with('Allcategories',$Allcategories);
     }
 

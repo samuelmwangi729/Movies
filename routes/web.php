@@ -105,3 +105,5 @@ Route::Post('/Newspaper/Subscribe',[
     'uses'=>'IndexController@subscribe',
     'as'=>'newsletter.subscribe'
 ]);
+
+Route::get('/test','DateTest@index');
