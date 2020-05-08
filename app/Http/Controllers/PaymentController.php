@@ -11,9 +11,9 @@ use Session;
 class PaymentController extends Controller
 {
     public function index(Request $request){
-        Twocheckout::privateKey('5EE6AC35-CC52-4714-A3A3-B810EA1B2DEF'); //Private Key
-        Twocheckout::sellerId('250350404436'); // 2Checkout Account Number
-        Twocheckout::sandbox(false); // Set to false for production accounts.
+        Twocheckout::privateKey('F0BBF918-4961-4FE8-97DD-6F9540C45A4B'); //Private Key
+        Twocheckout::sellerId('901423410'); // 2Checkout Account Number
+        Twocheckout::sandbox(true); // Set to false for production accounts.
 
 
         //end class

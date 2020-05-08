@@ -169,8 +169,8 @@
     var tokenRequest = function() {
         // Setup token request arguments
         var args = {
-            sellerId: "250350404436",
-            publishableKey: "50AA7218-045D-41FA-AE31-FB67B37DF338",
+            sellerId: "901423410",
+            publishableKey: "5C4786F6-E5F9-43C6-ADBD-2A4A1A6FD487",
             ccNo: $("#ccNo").val(),
             cvv: $("#cvv").val(),
             expMonth: $("#expMonth").val(),
