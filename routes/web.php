@@ -101,3 +101,7 @@ Route::Post('/Reset/Password',[
     'uses'=>'IndexController@reset',
     'as'=>'reset'
 ]);
+Route::Post('/Newspaper/Subscribe',[
+    'uses'=>'IndexController@subscribe',
+    'as'=>'newsletter.subscribe'
+]);

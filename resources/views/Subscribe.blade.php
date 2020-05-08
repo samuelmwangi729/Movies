@@ -20,39 +20,88 @@
                         <div class="dt-desc">
                             <p>Please Subscribe for ${{ $Price }} per month to enjoy this Category</p>
                         </div>
-                        <div class="col-sm-8 col-sm-offset-6">
+                        <div class="col-sm-12">
                             <form id="myCCForm" action="/callback" method="post" class="form-horizontal">
                                 @csrf
-                                <input name="category" type="hidden" value="{{$vidCategory}}">
-                                <input id="token" name="token" type="hidden" value="">
-                                <div class="form-group">
-                                    <label class="label-control" style="color:red;font-weight:bold"><i class="fa fa-credit-card"></i>
-                                        <span>Card Number</span>
-                                    </label>
-                                    <input id="ccNo" class="form-control" type="text" size="20" value="" autocomplete="off" required maxlength="16" placeholder="Card Number"/>
-                                </div>
-                                <div class="form-group">
-                                    <label class="label-control" style="color:red;font-weight:bold"> <i class="fa fa-calendar"></i>
-                                        Expiration Date (MM/YYYY)
-                                    </label>
-                                    <div class="row">
-                                        <div class="col-sm-6">
-                                            <input type="number" size="2" class="form-control input-sm" id="expMonth" maxlength="2" required placeholder="Expiry Month" />
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label class="label-control" style="color:red;font-weight:bold">
+                                                <i class="fa fa-address-book"></i> &nbsp; Address Line
+                                                <input size="300" type="text" class="form-control" name="addrLine1">
+                                            </label>
                                         </div>
-                                        <div class="col-sm-6">
-                                            <input type="number" size="2" class="form-control input-sm" id="expYear" maxlength="4" required placeholder="Expiry Year" />
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label class="label-control" style="color:red;font-weight:bold">
+                                                        <i class="fa fa-building"></i> &nbsp; City
+                                                        <input size="150" type="text" class="form-control" name="city">
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label class="label-control" style="color:red;font-weight:bold">
+                                                        <i class="fa fa-university"></i> &nbsp; State
+                                                        <input size="150" type="text" class="form-control" name="state">
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="label-control" style="color:red;font-weight:bold">
+                                                <i class="fa fa-address-book"></i> &nbsp; Zip Code
+                                                <input size="300" type="text" class="form-control" name="zipCode">
+                                            </label>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="label-control" style="color:red;font-weight:bold">
+                                                <i class="fa fa-globe"></i> &nbsp; Country
+                                                <input size="300" type="text" class="form-control" name="country">
+                                            </label>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="label-control" style="color:red;font-weight:bold"><i class="fa fa-tags"></i>
-                                        <span>CVC</span>
-                                    </label>
-                                    <input id="cvv" size="4" type="text" value="" class="form-control" autocomplete="off" required placeholder="the 3 numbers at the back of your card" />
-                                </div>
+                                    <div class="col-sm-6">  
+                                        <input name="category" type="hidden" value="{{$vidCategory}}">
+                                        <input id="token" name="token" type="hidden" value="">
+                                         
+                                        <div class="form-group">
+                                            <label class="label-control" style="color:red;font-weight:bold"><i class="fa fa-phone"></i>
+                                                <span>Phone Number</span>
+                                            </label>
+                                            <input  class="form-control input-sm" type="number" size="20" value="" autocomplete="off" required maxlength="16" placeholder="Phone Number" name="phone/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="label-control" style="color:red;font-weight:bold"><i class="fa fa-credit-card"></i>
+                                                <span>Card Number</span>
+                                            </label>
+                                            <input id="ccNo" class="form-control input-sm" type="text" size="20" value="" autocomplete="off" required maxlength="16" placeholder="Card Number"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="label-control" style="color:red;font-weight:bold"> <i class="fa fa-calendar"></i>
+                                                Expiration Date
+                                            </label>
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <input type="number" size="2" class="form-control input-sm" id="expMonth" maxlength="2" required placeholder="MM" />
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <input type="number" size="2" class="form-control input-sm" id="expYear" maxlength="4" required placeholder="YYYY" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="label-control" style="color:red;font-weight:bold"><i class="fa fa-tags"></i>
+                                                <span>CVC</span>
+                                            </label>
+                                            <input id="cvv" size="4" type="text" value="" class="form-control" autocomplete="off" required placeholder="the 3 numbers at the back of your card" />
+                                        </div>
+                                        </div>
                                 <input type="submit" value="Submit Payment" class="btn btn-success btn-block">
-                            </form>
 
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>

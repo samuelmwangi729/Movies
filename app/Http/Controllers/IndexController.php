@@ -10,6 +10,7 @@ use Session;
 use Hash;
 use Str;
 use App\Trailer;
+use App\Newsletter;
 
 class IndexController extends Controller
 {
@@ -45,6 +46,15 @@ class IndexController extends Controller
         $user->password=$newPass;
         $user->save();
         Session::flash('success','Kindly Login and Change Your Password Now. We have reset your Password to '.$randomPass);
+        return back();
+    }
+    public function subscribe(Request $request){
+        $this->validate($request,[
+            'Name'=>'required',
+            'Email'=>'required|unique:newsletters'
+        ]);
+        Newsletter::create($request->all());
+        Session::flash('success','You have been successfully subscribed to our Newsletter');
         return back();
     }
 }

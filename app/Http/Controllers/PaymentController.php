@@ -25,13 +25,13 @@ class PaymentController extends Controller
                 "total"      => '1',
                 "billingAddr" => array(
                     "name" => Auth::user()->name,
-                    "addrLine1" => '123 Test St',
-                    "city" => 'Columbus',
-                    "state" => 'OH',
-                    "zipCode" => '43123',
-                    "country" => 'USA',
+                    "addrLine1" => $request->addrLine1,
+                    "city" => $request->city,
+                    "state" => $request->state,
+                    "zipCode" => $request->zipCode,
+                    "country" => $request->country,
                     "email" => Auth::user()->email,
-                    "phoneNumber" => '555-555-5555'
+                    "phoneNumber" => $request->phone
                 )
             ));
 
@@ -66,7 +66,8 @@ class PaymentController extends Controller
 
             }
         }catch (Twocheckout_Error $e) {
-            print_r($e->getMessage());
+            Session::flash('error',$e->getMessage());
+            return back();
         }
     }
 }

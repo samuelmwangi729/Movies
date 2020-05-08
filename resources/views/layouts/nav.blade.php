@@ -154,6 +154,6 @@
     @if(Session::has('success'))</br>
     <div class="alert alert-success text-center" style="background-color:yellow !important">
         <a href="#" class="close" data-dismiss="alert">&times;</a>
-        <i class="fa fa-times-circle" style="color:red"></i>&nbsp;{{ Session::get('success') }}
+        <i class="fa fa-check-circle" style="color:red"></i>&nbsp;{{ Session::get('success') }}
     </div>
     @endif
