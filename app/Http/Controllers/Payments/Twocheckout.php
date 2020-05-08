@@ -7,7 +7,7 @@ abstract class Twocheckout
     public static $username;
     public static $password;
     public static $sandbox;
-    public static $verifySSL = true;
+    public static $verifySSL = false;
     public static $baseUrl = 'https://www.2checkout.com';
     public static $error;
     public static $format = 'array';
