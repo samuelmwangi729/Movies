@@ -13,8 +13,8 @@ class PaymentController extends Controller
     public function index(Request $request){
         Twocheckout::privateKey('5EE6AC35-CC52-4714-A3A3-B810EA1B2DEF'); //Private Key
         Twocheckout::sellerId('250350404436'); // 2Checkout Account Number
-        // Twocheckout::username('');
-        // Twocheckout::password('demotestuser');
+        Twocheckout::username('samuelmwangi729@gmail.com');
+        Twocheckout::password('samuelmwangi729@gmail.com');
         Twocheckout::sandbox(false); // Set to false for production accounts.
 
 
