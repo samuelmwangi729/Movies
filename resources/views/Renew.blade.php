@@ -23,6 +23,7 @@
                         <div class="col-sm-3 col-sm-offset-5">
                             <form id="myCCForm" action="/callback" method="post">
                                 @csrf
+                               <input type="hidden" name="category" value="{{ $vidCategory }}">
                                 <script src="https://checkout.stripe.com/checkout.js"
                                 class="stripe-button"
                                 data-key="pk_test_Qqv81EyzUr0eu9WgXOx19r5500kmImXrAx"
