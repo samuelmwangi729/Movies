@@ -34,20 +34,6 @@
             <a href="#"><i class="fa fa-youtube-play"></i></a>
             <a href="#"><i class="fa fa-instagram"></i></a>
         </div>
-        <div class="hw-insta-media">
-            <div class="section-title">
-                <h5>Featured Videos</h5>
-            </div>
-            <div class="insta-pic">
-                <img src="img/instagram/ip-1.jpg" alt="">
-                <img src="img/instagram/ip-2.jpg" alt="">
-                <img src="img/instagram/ip-3.jpg" alt="">
-                <img src="img/instagram/ip-4.jpg" alt="">
-            </div>
-        </div>
-        <div class="hw-copyright">
-            Copyright ©2020 SmartSoft Kenya. All rights reserved
-        </div>
     </div>
     <!-- Humberger Menu End -->
 
