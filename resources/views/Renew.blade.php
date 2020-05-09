@@ -20,87 +20,19 @@
                         <div class="dt-desc">
                             <p>Please Renew for ${{ $Price }} to Continue  enjoying Videos in this Category</p>
                         </div>
-                        <div class="row">
-                            <form id="myCCForm" action="/callback" method="post" class="form-horizontal">
+                        <div class="col-sm-3 col-sm-offset-5">
+                            <form id="myCCForm" action="/callback" method="post">
                                 @csrf
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <label class="label-control" style="color:red;font-weight:bold">
-                                                <i class="fa fa-address-book"></i> &nbsp; Address Line
-                                                <input size="300" type="text" class="form-control" name="addrLine1">
-                                            </label>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-sm-6">
-                                                <div class="form-group">
-                                                    <label class="label-control" style="color:red;font-weight:bold">
-                                                        <i class="fa fa-building"></i> &nbsp; City
-                                                        <input size="150" type="text" class="form-control" name="city">
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <div class="form-group">
-                                                    <label class="label-control" style="color:red;font-weight:bold">
-                                                        <i class="fa fa-university"></i> &nbsp; State
-                                                        <input size="150" type="text" class="form-control" name="state">
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="label-control" style="color:red;font-weight:bold">
-                                                <i class="fa fa-address-book"></i> &nbsp; Zip Code
-                                                <input size="300" type="text" class="form-control" name="zipCode">
-                                            </label>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="label-control" style="color:red;font-weight:bold">
-                                                <i class="fa fa-globe"></i> &nbsp; Country
-                                                <input size="300" type="text" class="form-control" name="country">
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <input name="category" type="hidden" value="{{$vidCategory}}">
-                                        <input id="token" name="token" type="hidden" value="">
-
-                                        <div class="form-group">
-                                            <label class="label-control" style="color:red;font-weight:bold"><i class="fa fa-phone"></i>
-                                                <span>Phone Number</span>
-                                            </label>
-                                            <input  class="form-control input-sm" type="number" size="20" value="" autocomplete="off" required maxlength="16" placeholder="Phone Number" name="phone/>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="label-control" style="color:red;font-weight:bold"><i class="fa fa-credit-card"></i>
-                                                <span>Card Number</span>
-                                            </label>
-                                            <input id="ccNo" class="form-control input-sm" type="text" size="20" value="" autocomplete="off" required maxlength="16" placeholder="Card Number"/>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="label-control" style="color:red;font-weight:bold"> <i class="fa fa-calendar"></i>
-                                                Expiration Date
-                                            </label>
-                                            <div class="row">
-                                                <div class="col-sm-6">
-                                                    <input type="number" size="2" class="form-control input-sm" id="expMonth" maxlength="2" required placeholder="MM" />
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <input type="number" size="2" class="form-control input-sm" id="expYear" maxlength="4" required placeholder="YYYY" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="label-control" style="color:red;font-weight:bold"><i class="fa fa-tags"></i>
-                                                <span>CVC</span>
-                                            </label>
-                                            <input id="cvv" size="4" type="text" value="" class="form-control" autocomplete="off" required placeholder="the 3 numbers at the back of your card" />
-                                        </div>
-                                        </div>
-                                <input type="submit" value="Submit Payment" class="btn btn-success btn-block">
-
-                                </div>
+                                <script src="https://checkout.stripe.com/checkout.js"
+                                class="stripe-button"
+                                data-key="pk_test_Qqv81EyzUr0eu9WgXOx19r5500kmImXrAx"
+                                data-amount={{ $Price*100 }}
+                                data-name={{ config('app.name') }}
+                                data-description="Subscribe for the Category"
+                                data-image="https://images.pexels.com/photos/545065/pexels-photo-545065.jpeg?cs=srgb&dl=blur-cash-close-up-dollars-545065.jpg&fm=jpg"
+                                data-locale="auto"
+                                data-currency="usd"
+                                ></script>
                             </form>
                         </div>
                     </div>
@@ -143,54 +75,3 @@
     <!-- Details Post Section End -->
 @include('layouts.footer')
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="https://www.2checkout.com/checkout/api/2co.min.js"></script>
-
-<script>
-    // Called when token created successfully.
-    var successCallback = function(data) {
-        var myForm = document.getElementById('myCCForm');
-
-        // Set the token as the value for the token input
-        myForm.token.value = data.response.token.token;
-
-        // IMPORTANT: Here we call `submit()` on the form element directly instead of using jQuery to prevent and infinite token request loop.
-        myForm.submit();
-    };
-
-    // Called when token creation fails.
-    var errorCallback = function(data) {
-        if (data.errorCode === 200) {
-            tokenRequest();
-        } else {
-            alert(data.errorMsg);
-        }
-    };
-
-    var tokenRequest = function() {
-        // Setup token request arguments
-        var args = {
-            sellerId: "250350404436",
-            publishableKey: "50AA7218-045D-41FA-AE31-FB67B37DF338",
-            ccNo: $("#ccNo").val(),
-            cvv: $("#cvv").val(),
-            expMonth: $("#expMonth").val(),
-            expYear: $("#expYear").val()
-        };
-
-        // Make the token request
-        TCO.requestToken(successCallback, errorCallback, args);
-    };
-
-    $(function() {
-        // Pull in the public encryption key for our environment
-        TCO.loadPubKey('sandbox');
-
-        $("#myCCForm").submit(function(e) {
-            // Call our token request function
-            tokenRequest();
-
-            // Prevent form from submitting
-            return false;
-        });
-    });
-</script>
