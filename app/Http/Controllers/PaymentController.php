@@ -10,7 +10,7 @@ use Stripe\Charge;
 class PaymentController extends Controller
 {
     public function index(Request $request){
-        Stripe::setApiKey('sk_test_YrU8aAxLo4HFb1P9HkOAd8Pd00oL1pZIMa');
+        Stripe::setApiKey('sk_live_BFaDUjeQ77AoQv0X8Ua50SJd00vbPAKwdI');
 
         $customer = \Stripe\Customer::create([
             'email' =>Auth::user()->email,

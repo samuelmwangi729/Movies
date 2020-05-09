@@ -26,7 +26,7 @@
                                 @csrf
                                 <script src="https://checkout.stripe.com/checkout.js"
                                 class="stripe-button"
-                                data-key="pk_test_Qqv81EyzUr0eu9WgXOx19r5500kmImXrAx"
+                                data-key="pk_live_zAiIsWRkCLlVunBBdLXcWUxf00mpgqkp6m"
                                 data-amount={{ $Price*100 }}
                                 data-name={{ config('app.name') }}
                                 data-description="Subscribe for the Category"
