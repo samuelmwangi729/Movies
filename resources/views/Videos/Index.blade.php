@@ -43,7 +43,7 @@
                     <td>{{ $video->VideoCategory }}</td>
                     <td><a href="{{ url('Play/'.$video->VideoSlug) }}"><i class="fa fa-play" style="color:red"></i>&nbsp;Play Video</a></td>
                     <td>{{ $video->Views }}</td>
-                    <td><a href="{{ route('video.edit',[$video->VideoSlug]) }}" class="fa fa-edit btn btn-primary btn-sm"></a>&nbsp;@if(Auth::user()->isAdmin==1) <a href="{{ route('video.delete',[$video->VideoSlug]) }}" class="fa fa-trash-alt btn btn-danger btn-sm"></a>&nbsp;@endif</td>
+                    <td><a href="{{ route('video.edit',[$video->VideoSlug]) }}" class="fa fa-edit"></a>&nbsp;@if(Auth::user()->isAdmin==1) <a href="{{ route('video.delete',[$video->VideoSlug]) }}" class="fa fa-trash-alt" style="color:red"></a>&nbsp;@endif</td>
                   </tr>
                 @endforeach
                 <tr>
@@ -71,7 +71,7 @@
             </div>
             <div class="modal-body">
                 <div class="form">
-                    <form method="POST" action="{{ route('video.add') }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('video.add') }}" enctype="multipart/form-data" id="form">
                         @csrf
                         <div class="form-group">
                             <div class="mb-3">
@@ -87,7 +87,7 @@
                         <!-- /.form-group -->
                         <div class="mb-3">
                             <textarea class="textarea" placeholder="Simple Video Description" name="VideoDescription"
-                            style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                            style="width: 100%; height: 100px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
                         </div>
                         <div class="custom-file">
                             <input type="file" class="custom-file-input" id="customFile" name="VideoPoster">
@@ -97,9 +97,15 @@
                             <input type="file" class="custom-file-input" id="customFile" name="VideoFile">
                             <label class="custom-file-label" for="customFile">Video File</label>
                         </div>
+                    </br>
+                </br>
+                        <div class="uploading text-center" style="position:relative; width:100%;style:none" id="uploading">
+                           <span style="paddig-top:-20px;color:red;font-weight:bold"> Uploading in Progress</span>
+                        </div>
+                        <br>
                         <div class="modal-footer justify-content-between">
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary"><i class="fa fa-upload"></i>&nbsp;Upload Video</button>
+                            <button type="submit" class="btn btn-primary" id="upload"><i class="fa fa-upload"></i>&nbsp;Upload Video</button>
                           </div>
                     </form>
                 </div>
@@ -112,4 +118,16 @@
       <!-- /.modal -->
   </div>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $(function() {
+         $(document).ready(function()
+         {
+           $("#uploading").hide();
+   });
+   $("#upload").on("click",function(){
+    $("#uploading").show();
+   })
+ });
+</script>
 @stop

@@ -41,7 +41,7 @@
                     <td>{{ $trailer->TrailerTitle }}</td>
                     <td>{{ $trailer->VideoCategory }}</td>
                     <td><a href="{{ url($trailer->TrailerFile) }}"><i class="fa fa-play" style="color:red"></i>&nbsp;Play Video</a></td>
-                    <td></a>&nbsp;@if(Auth::user()->isAdmin==1) <a href="{{ route('trailer.delete',[$trailer->TrailerSlug]) }}" class="fa fa-trash-alt btn btn-danger btn-sm"></a>&nbsp;@endif</td>
+                    <td></a>&nbsp;@if(Auth::user()->isAdmin==1) <a href="{{ route('trailer.delete',[$trailer->TrailerSlug]) }}" class="fa fa-trash-alt" style="color:red"></a>&nbsp;@endif</td>
                   </tr>
                 @endforeach
                 <tr>
@@ -89,6 +89,10 @@
                             <input type="file" class="custom-file-input" id="customFile" name="TrailerFile">
                             <label class="custom-file-label" for="customFile">Trailer File</label>
                         </div>
+                        <div class="uploading text-center" style="position:relative; width:100%;style:none" id="uploading">
+                            <span style="paddig-top:-20px;color:red;font-weight:bold"> Uploading in Progress</span>
+                         </div>
+                         <br>
                         <div class="modal-footer justify-content-between">
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                             <button type="submit" class="btn btn-primary"><i class="fa fa-upload"></i>&nbsp;Upload Trailer</button>
@@ -104,4 +108,27 @@
       <!-- /.modal -->
   </div>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $(function() {
+         $(document).ready(function()
+         {
+           $("#uploading").hide();
+   });
+   $("#upload").on("click",function(){
+    $("#uploading").show();
+   })
+ });
+</script><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $(function() {
+         $(document).ready(function()
+         {
+           $("#uploading").hide();
+   });
+   $("#upload").on("click",function(){
+    $("#uploading").show();
+   })
+ });
+</script>
 @stop

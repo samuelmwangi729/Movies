@@ -106,4 +106,4 @@ Route::Post('/Newspaper/Subscribe',[
     'as'=>'newsletter.subscribe'
 ]);
 
-Route::get('/test','DateTest@index');
+Route::get('/test','DateTest@index')->name('fileUploadPost');

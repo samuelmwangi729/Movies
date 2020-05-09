@@ -15,6 +15,38 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <link rel="stylesheet" href="/css/app.css">
 <link rel="stylesheet" href="/css/bootstrap.min.css">
 <link rel="stylesheet" href="{{ asset('css/summernote.css') }}">
+<style>
+  .uploading:before {
+      text-decoration: none;
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin: 0 10px -6px 0;
+  border: 3px solid #18d26e;
+  border-top-color: #eee;
+  -webkit-animation: animate-loading 1s linear infinite;
+  animation: animate-loading 1s linear infinite;
+}
+@-webkit-keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+</style>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
    @if(Auth::check())
