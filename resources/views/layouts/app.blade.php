@@ -163,8 +163,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <h3><i class="fas fa-exclamation-triangle text-warning"></i> Oops! Page not found.</h3>
 
         <p>
-          We could not find the page you were looking for.Please Login to Access the page
-           <a href="/">Do it Here</a>
+          We could not find the page you were looking for.Please  <a href="/">Login</a> to Access the page
+
         </p>
       </div>
       <!-- /.error-content -->
