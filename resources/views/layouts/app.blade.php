@@ -41,9 +41,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- Brand Logo -->
         <a href="/" class="brand-link">
           <span style="color:white;font-family: 'Times New Roman', Times, serif;font-size:25px;text-shadow: 2px 2px blue,4px 4px black !important"><i class="fa fa-video"></i></span>
-
-          {{-- <img src="dist/img/AdminLTELogo.png" alt="{{ config('app.name') }}" class="brand-image img-circle elevation-3"
-               style="opacity: .8"> --}}
           <span class="brand-text font-weight-light" style="color:white;font-family: 'Times New Roman', Times, serif;font-size:25px;text-shadow: 2px 2px blue,4px 4px black !important">{{ config('app.name') }}</span>
         </a>
 
@@ -166,7 +163,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <h3><i class="fas fa-exclamation-triangle text-warning"></i> Oops! Page not found.</h3>
 
         <p>
-          We could not find the page you were looking for. Have You Signed In/Signed Up
+          We could not find the page you were looking for.Please Login to Access the page
            <a href="/">Do it Here</a>
         </p>
       </div>
