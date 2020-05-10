@@ -207,5 +207,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
    @endif
     <!-- REQUIRED SCRIPTS -->
 <script src="{{ asset('js/app.js') }}"></script>
+<script src="{{ asset('js/bs-custom-file-input.min.js') }}"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+      bsCustomFileInput.init();
+    });
+    </script>
+
 </body>
 </html>

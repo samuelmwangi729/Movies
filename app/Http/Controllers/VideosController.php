@@ -242,6 +242,7 @@ class VideosController extends Controller
             Session::flash('error','Video Does Not Exist');
             return redirect()->back();
         }
+        @unlink(public_path($video->VideoPoster));
         @unlink(public_path($video->VideoFile));
         $idv=$video->id;
         $video->destroy($idv);
