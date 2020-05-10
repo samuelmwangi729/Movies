@@ -42,7 +42,7 @@
                             <div class="col-md-6">
                                 <div class="vg-item large-vg set-bg" data-setbg="{{ asset($video->VideoPoster) }}">
                                     <a href="{{ asset($video->VideoFile) }}"
-                                        class="play-btn video-popup"><i class="fa fa-play"></i></a>
+                                        class="play-btn video-popup" style="font-size:100px"><i class="fa fa-play-circle"></i></a>
                                     <div class="vg-text">
                                         <h5>{{ $video->VideoTitle }}</h5>
                                         <ul style="color:red">
