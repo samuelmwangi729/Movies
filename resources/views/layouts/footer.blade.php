@@ -1,7 +1,7 @@
 
     <!-- Footer Section Begin -->
     <footer class="footer-section">
-        <div class="modal fade" id="modal-default">
+        <div class="modal fade" id="modal-tc">
             <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -77,7 +77,7 @@
                             <a href="#"><i class="fa fa-youtube-play"></i></a>
                             <a href="#"><i class="fa fa-instagram"></i></a>
                             <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a  href="#" data-toggle="modal" data-target="#modal-default">T&Cs</a>
+                            <a  href="#" data-toggle="modal" data-target="#modal-tc">T&Cs</a>
                         </div>
                     </div>
                 </div>

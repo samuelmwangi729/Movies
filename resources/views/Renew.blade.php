@@ -20,11 +20,15 @@
                         <div class="dt-desc">
                             <p>Please Renew for ${{ $Price }} to Continue  enjoying Videos in this Category</p>
                         </div>
+                        <a href="https://www.instamojo.com/@Vildstream/lfe4e4a72977c47f8a41cc3371f59d2b5/"
+                        rel="im-checkout" data-text="Renew"
+                        data-css-style="color:#b80000; background:#fccb00; width:180px; border-radius:30px"
+                          data-layout="vertical"></a>
                         <div class="col-sm-3 col-sm-offset-5">
-                            <form id="myCCForm" action="/callback" method="post">
+                            <form id="myCCForm" action="/callback" method="post" id="form">
+                                <input type="hidden" name="category" value="{{ $vidCategory }}">
                                 @csrf
-                               <input type="hidden" name="category" value="{{ $vidCategory }}">
-                                <script src="https://checkout.stripe.com/checkout.js"
+                                {{-- <script src="https://checkout.stripe.com/checkout.js"
                                 class="stripe-button"
                                 data-key="pk_live_zAiIsWRkCLlVunBBdLXcWUxf00mpgqkp6m"
                                 data-amount={{ $Price*100 }}
@@ -33,7 +37,7 @@
                                 data-image="https://images.pexels.com/photos/545065/pexels-photo-545065.jpeg?cs=srgb&dl=blur-cash-close-up-dollars-545065.jpg&fm=jpg"
                                 data-locale="auto"
                                 data-currency="usd"
-                                ></script>
+                                ></script> --}}
                             </form>
                         </div>
                     </div>
@@ -75,4 +79,39 @@
     </section>
     <!-- Details Post Section End -->
 @include('layouts.footer')
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="https://js.instamojo.com/v1/button.js"></script>
+    <script>
+      /* Start client-defined Callback Handler Functions */
+      function onOpenHandler () {
+        // alert('Payments Modal is Opened');
+      }
+
+      function onCloseHandler () {
+        // alert('Payments Modal is Closed');
+      }
+
+      function onPaymentSuccessHandler (response) {
+        let form=document.getElementById("form");
+        form.submit();
+      }
+
+      function onPaymentFailureHandler (response) {
+        alert('Payment Failure');
+        console.log('Payment Failure Response', response);
+      }
+      /* End client-defined Callback Handler Functions */
+
+      /* Configuring Handlers */
+      Instamojo.configure({
+        handlers: {
+          onOpen: onOpenHandler,
+          onClose: onCloseHandler,
+          onSuccess: onPaymentSuccessHandler,
+          onFailure: onPaymentFailureHandler
+        }
+      });
+
+      function onButtonClick() {
+        Instamojo.open('https://imjo.in/3zYSDT');
+      }
+    </script>

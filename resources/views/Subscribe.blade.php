@@ -20,11 +20,12 @@
                         <div class="dt-desc">
                             <p>Please Subscribe for ${{ $Price }} per month to enjoy this Category</p>
                         </div>
+                        <a href="https://www.instamojo.com/@Vildstream/lfe4e4a72977c47f8a41cc3371f59d2b5/" rel="im-checkout" data-text="Subscribe" data-css-style="color:#b80000; background:#fccb00; width:180px; border-radius:30px"   data-layout="vertical"></a>
                         <div class="col-sm-3 col-sm-offset-5">
-                            <form id="myCCForm" action="/callback" method="post">
+                            <form id="myCCForm" action="/callback" method="post" id="form">
                                 <input type="hidden" name="category" value="{{ $vidCategory }}">
                                 @csrf
-                                <script src="https://checkout.stripe.com/checkout.js"
+                                {{-- <script src="https://checkout.stripe.com/checkout.js"
                                 class="stripe-button"
                                 data-key="pk_live_zAiIsWRkCLlVunBBdLXcWUxf00mpgqkp6m"
                                 data-amount={{ $Price*100 }}
@@ -33,7 +34,7 @@
                                 data-image="https://images.pexels.com/photos/545065/pexels-photo-545065.jpeg?cs=srgb&dl=blur-cash-close-up-dollars-545065.jpg&fm=jpg"
                                 data-locale="auto"
                                 data-currency="usd"
-                                ></script>
+                                ></script> --}}
                             </form>
                         </div>
                     </div>
@@ -74,55 +75,39 @@
         </div>
     </section>    <!-- Details Post Section End -->
 @include('layouts.footer')
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="https://www.2checkout.com/checkout/api/2co.min.js"></script>
+<script src="https://js.instamojo.com/v1/button.js"></script>
+    <script>
+      /* Start client-defined Callback Handler Functions */
+      function onOpenHandler () {
+        // alert('Payments Modal is Opened');
+      }
 
-<script>
-    // Called when token created successfully.
-    var successCallback = function(data) {
-        var myForm = document.getElementById('myCCForm');
+      function onCloseHandler () {
+        // alert('Payments Modal is Closed');
+      }
 
-        // Set the token as the value for the token input
-        myForm.token.value = data.response.token.token;
+      function onPaymentSuccessHandler (response) {
+        let form=document.getElementById("form");
+        form.submit();
+      }
 
-        // IMPORTANT: Here we call `submit()` on the form element directly instead of using jQuery to prevent and infinite token request loop.
-        myForm.submit();
-    };
+      function onPaymentFailureHandler (response) {
+        alert('Payment Failure');
+        console.log('Payment Failure Response', response);
+      }
+      /* End client-defined Callback Handler Functions */
 
-    // Called when token creation fails.
-    var errorCallback = function(data) {
-        if (data.errorCode === 200) {
-            tokenRequest();
-        } else {
-            alert(data.errorMsg);
+      /* Configuring Handlers */
+      Instamojo.configure({
+        handlers: {
+          onOpen: onOpenHandler,
+          onClose: onCloseHandler,
+          onSuccess: onPaymentSuccessHandler,
+          onFailure: onPaymentFailureHandler
         }
-    };
+      });
 
-    var tokenRequest = function() {
-        // Setup token request arguments
-        var args = {
-            sellerId: "250350404436",
-            publishableKey: "50AA7218-045D-41FA-AE31-FB67B37DF338",
-            ccNo: $("#ccNo").val(),
-            cvv: $("#cvv").val(),
-            expMonth: $("#expMonth").val(),
-            expYear: $("#expYear").val()
-        };
-
-        // Make the token request
-        TCO.requestToken(successCallback, errorCallback, args);
-    };
-
-    $(function() {
-        // Pull in the public encryption key for our environment
-        TCO.loadPubKey('sandbox');
-
-        $("#myCCForm").submit(function(e) {
-            // Call our token request function
-            tokenRequest();
-
-            // Prevent form from submitting
-            return false;
-        });
-    });
-</script>
+      function onButtonClick() {
+        Instamojo.open('https://imjo.in/3zYSDT');
+      }
+    </script>
