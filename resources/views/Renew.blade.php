@@ -25,20 +25,7 @@
                         data-css-style="color:#b80000; background:#fccb00; width:180px; border-radius:30px"
                           data-layout="vertical"></a>
                         <div class="col-sm-3 col-sm-offset-5">
-                            <form id="myCCForm" action="/callback" method="post" id="form">
-                                <input type="hidden" name="category" value="{{ $vidCategory }}">
-                                @csrf
-                                {{-- <script src="https://checkout.stripe.com/checkout.js"
-                                class="stripe-button"
-                                data-key="pk_live_zAiIsWRkCLlVunBBdLXcWUxf00mpgqkp6m"
-                                data-amount={{ $Price*100 }}
-                                data-name={{ config('app.name') }}
-                                data-description="Subscribe for the Category"
-                                data-image="https://images.pexels.com/photos/545065/pexels-photo-545065.jpeg?cs=srgb&dl=blur-cash-close-up-dollars-545065.jpg&fm=jpg"
-                                data-locale="auto"
-                                data-currency="usd"
-                                ></script> --}}
-                            </form>
+                            {{ Session::flash('category',$vidCategory) }}
                         </div>
                     </div>
                 </div>
@@ -91,8 +78,7 @@
       }
 
       function onPaymentSuccessHandler (response) {
-        let form=document.getElementById("form");
-        form.submit();
+        window.open('/callback/{{ Session::get('category') }}','_parent')
       }
 
       function onPaymentFailureHandler (response) {

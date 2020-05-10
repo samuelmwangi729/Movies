@@ -84,7 +84,7 @@ Route::group(['middleware' => ['auth']], function () {
         'uses'=>'CategoriesController@show',
         'as'=>'video.review'
     ]);
-    Route::post('/callback',[
+    Route::get('/callback/{category}',[
         'uses'=>'PaymentController@index',
         // 'uses'=>'PaymentsController@index',
     ]);

@@ -10,6 +10,7 @@ use Stripe\Charge;
 class PaymentController extends Controller
 {
     public function index(Request $request){
+        // dd($request->category);
         $isExist=CatSubscriber::where([
             ['Subscriber','=',Auth::user()->email],
             ['Category','=',$request->category]

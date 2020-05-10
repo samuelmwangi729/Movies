@@ -15,6 +15,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <link rel="stylesheet" href="/css/app.css">
 <link rel="stylesheet" href="/css/bootstrap.min.css">
 <link rel="stylesheet" href="{{ asset('css/summernote.css') }}">
+<meta name="csrf-token" content="{{ csrf_token() }}" />
 <style>
   .uploading:before {
       text-decoration: none;
