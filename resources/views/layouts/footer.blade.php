@@ -1,6 +1,68 @@
 
     <!-- Footer Section Begin -->
     <footer class="footer-section">
+        <div class="modal fade" id="modal-default">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title">Terms and Conditions</h4>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <b>License</b><br>
+                    Your content remains yours, which means that you retain any intellectual property rights that you have in your content. For example, you have intellectual property rights in the creative content you make, such as reviews you write. Or you may have the right to share someone else’s creative content if they’ve given you their permission.
+
+                    We need your permission if your intellectual property rights restrict our use of your content. You provide {{ config('app.name') }} with that permission through this license.
+
+                    What’s covered
+                    This license covers your content if that content is protected by intellectual property rights.
+
+                    What’s not covered
+                    This license doesn’t affect your privacy rights — it’s only about your intellectual property rights
+                    This license doesn’t cover these types of content:
+                    publicly-available factual information that you provide, such as corrections to the address of a local business. That information doesn’t require a license because it’s considered common knowledge that everyone’s free to use.
+                    feedback that you offer, such as suggestions to improve our services. Feedback is covered in the Service-related communications section below.
+                    Scope
+                    This license is:
+                    worldwide, which means it’s valid anywhere in the world
+                    non-exclusive, which means you can license your content to others
+                    royalty-free, which means there are no fees for this license
+                    Rights
+                    This license allows {{config('app.name')}} to:
+
+                    host, reproduce, distribute, communicate, and use your content — for example, to save your content on our systems and make it accessible from anywhere you go
+                    publish, publicly perform, or publicly display your content, if you’ve made it visible to others
+                    modify and create derivative works based on your content, such as reformatting or translating it
+                    sublicense these rights to:
+                    other users to allow the services to work as designed, such as enabling you to share photos with people you choose
+                    our contractors who’ve signed agreements with us that are consistent with these terms, only for the limited purposes described in the Purpose section below
+                    Purpose
+                    This license is for the limited purpose of:
+
+                    operating and improving the services, which means allowing the services to work as designed and creating new features and functionalities. This includes using automated systems and algorithms to analyze your content:
+                    for spam, malware, and illegal content
+                    to recognize patterns in data, such as determining when to suggest a new album in {{config('app.name')}} Photos to keep related photos together
+                    to customize our services for you, such as providing recommendations and personalized search results, content, and ads (which you can change or turn off in Ads Settings)
+                    This analysis occurs as the content is sent, received, and when it is stored.
+                    using content you’ve shared publicly to promote the services. For example, to promote a {{config('app.name')}} app, we might quote a review you wrote. Or to promote {{config('app.name')}} Play, we might show a screenshot of the app you offer in the Play Store.
+                    developing new technologies and services for {{config('app.name')}} consistent with these terms
+                    Duration
+                    This license lasts for as long as your content is protected by intellectual property rights.
+
+                    If you remove from our services any content that’s covered by this license, then our systems will stop making that content publicly available in a reasonable amount of time. There are two exceptions:
+
+                    If you already shared your content with others before removing it. For example, if you shared a photo with a friend who then made a copy of it, or shared it again, then that photo may continue to appear in your friend’s {{config('app.name')}} Account even after you remove it from your {{config('app.name')}} Account.
+                    If you make your content available through other companies’ services, it’s possible that search engines, including Google Search, will continue to find and display your content as part of their search results
+                </div>
+            </div>
+              <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+          </div>
+          <!-- /.modal -->
+      </div>
         <div class="container">
             <div class="row">
                 <div class="col-lg-4">
@@ -14,6 +76,8 @@
                             <a href="#"><i class="fa fa-twitter"></i></a>
                             <a href="#"><i class="fa fa-youtube-play"></i></a>
                             <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a  href="#" data-toggle="modal" data-target="#modal-default">T&Cs</a>
                         </div>
                     </div>
                 </div>
