@@ -75,6 +75,10 @@ class VideosController extends Controller
         $TrailerPoster->move('TrailerPosters/',$newPosterName);
         //handle the Trailer uploaded
         $TrailerFile=$request->TrailerFile;
+        if($TrailerFile->getSize() > 100000000){
+            Session::flash('error','You cant upload a file larger than 100MBS');
+            return redirect()->back();
+        }
         $newTrailerName=time().$TrailerFile->getClientOriginalName();
         $TrailerFile->move('Trailers/',$newTrailerName);
         Trailer::create([
@@ -110,6 +114,11 @@ class VideosController extends Controller
         $videoPoster->move('videoPosters/',$newPosterName);
         //handle the video uploaded
         $videoFile=$request->VideoFile;
+        // dd($videoFile->getSize());
+        if($videoFile->getSize() > 100000000){
+            Session::flash('error','You cant upload a file larger than 100MBS');
+            return redirect()->back();
+        }
         $newVideoName=time().$videoFile->getClientOriginalName();
         $videoFile->move('Videos/',$newVideoName);
         Video::create([
@@ -212,6 +221,10 @@ class VideosController extends Controller
             ]);
              //handle the video uploaded
             $videoFile=$request->VideoFile;
+            if($videoFile->getSize() > 100000000){
+                Session::flash('error','You cant upload a file larger than 100MBs');
+                return redirect()->back();
+            }
             $newVideoName=time().$videoFile->getClientOriginalName();
             $videoFile->move('Videos/',$newVideoName);
             $newVid='/Videos/'.$newVideoName;
