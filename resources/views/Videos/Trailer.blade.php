@@ -85,6 +85,9 @@
                             <input type="file" class="custom-file-input" id="customFile" name="TrailerPoster">
                             <label class="custom-file-label" for="customFile">Trailer Poster</label>
                         </div><br></br>
+                        <div class="alert alert-danger">
+                            <Strong>Maximum Filesize uploaded is 100 Megabytes</Strong>
+                        </div>
                         <div class="custom-file">
                             <input type="file" class="custom-file-input" id="customFile" name="TrailerFile">
                             <label class="custom-file-label" for="customFile">Trailer File</label>
