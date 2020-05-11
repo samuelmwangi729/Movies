@@ -190,11 +190,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
    @else
    <section class="content" style="margin-top:250px">
     <div class="error-page">
-      <h2 class="headline text-warning"> 404</h2>
+      <h2 class="headline text-warning"> </h2>
 
       <div class="error-content">
-        <h3><i class="fas fa-exclamation-triangle text-warning"></i> Oops! Page not found.</h3>
-
         <p>
          Please <a href="/">Login</a> to View
 

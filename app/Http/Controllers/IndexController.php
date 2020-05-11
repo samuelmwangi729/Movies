@@ -15,13 +15,13 @@ use App\Newsletter;
 class IndexController extends Controller
 {
     public function index(){
+        $videosOld=Video::orderBy('id','desc')->get()->take(3);
         $trailers=Trailer::all();
         $editors=Trailer::orderBy('id','asc')->get();
         $categories=Category::all();
         $poster=Video::orderBy('id','desc')->get()->take(2);
         $featured=Video::orderBy('id','desc')->get()->take(5);
         $videos=Video::orderBy('id','asc')->get();
-        $videosOld=Video::all();
         return view('welcome')
         ->with('editors',$editors)
         ->with('trailers',$trailers)
