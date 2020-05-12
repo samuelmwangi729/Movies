@@ -64,7 +64,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row-fluid">
                 <div class="lp-slider owl-carousel">
                     @foreach($categories as $category)
                     <div class="col-lg-3">
