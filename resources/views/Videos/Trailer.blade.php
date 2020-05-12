@@ -98,7 +98,7 @@
                          <br>
                         <div class="modal-footer justify-content-between">
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary"><i class="fa fa-upload"></i>&nbsp;Upload Trailer</button>
+                            <button type="submit" class="btn btn-primary" id="upload"><i class="fa fa-upload"></i>&nbsp;Upload Trailer</button>
                           </div>
                     </form>
                 </div>
@@ -111,18 +111,9 @@
       <!-- /.modal -->
   </div>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript">
-    $(function() {
-         $(document).ready(function()
-         {
-           $("#uploading").hide();
-   });
-   $("#upload").on("click",function(){
-    $("#uploading").show();
-   })
- });
-</script><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+@stop
+<script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
+
 <script type="text/javascript">
     $(function() {
          $(document).ready(function()
@@ -134,4 +125,3 @@
    })
  });
 </script>
-@stop

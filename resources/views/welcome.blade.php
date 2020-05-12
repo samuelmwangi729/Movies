@@ -69,7 +69,7 @@
                     @foreach($categories as $category)
                     <div class="col-lg-3">
                         <div class="lp-item">
-                            <div class="lp-pic set-bg" data-setbg="{{$category->CategoryImage}}">
+                            <div class="lp-pic set-bg" data-setbg="{{$category->CategoryImage}}" onclick="window.open('/Videos/Single/{{ $category->CategoryName }}','_parent')">
                             </div>
                             <div class="lp-text">
                                 <h6><a href="{{ route('category.find',[$category->CategoryName]) }}">{{ $category->CategoryName }}</a></h6>

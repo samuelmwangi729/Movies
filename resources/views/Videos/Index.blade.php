@@ -121,16 +121,17 @@
       <!-- /.modal -->
   </div>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript">
-    $(function() {
-         $(document).ready(function()
+
+@stop
+<script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
+<script>
+    jQuery(function() {
+         jQuery(document).ready(function()
          {
-           $("#uploading").hide();
+           jQuery("#uploading").hide();
    });
-   $("#upload").on("click",function(){
-    $("#uploading").show();
+   jQuery("#upload").on("click",function(){
+    jQuery("#uploading").show();
    })
  });
 </script>
-@stop
