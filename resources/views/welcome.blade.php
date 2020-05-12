@@ -69,12 +69,14 @@
                     @foreach($categories as $category)
                     <div class="col-lg-3">
                         <div class="lp-item">
-                            <div class="lp-pic set-bg" data-setbg="{{$category->CategoryImage}}">
+                            <a href="{{route('category.find',[$category->CategoryName])}}">
+                                <img src="{{$category->CategoryImage}}">
+                            </a>
                             </div>
                             <div class="lp-text">
-                                <h6><a href="{{ route('category.find',[$category->CategoryName]) }}">{{ $category->CategoryName }}</a></h6>
-                                <ul>
-                                    <li><i class="fa fa-clock-o"></i> {{ ($category->created_at)->toFormattedDateString() }}</li>
+                                <h6 class="text-center"><a href="{{ route('category.find',[$category->CategoryName]) }}" style="color:white;font-weight:bold;text-decoration:none">{{ $category->CategoryName }}</a></h6>
+                                <ul style="list-style:none">
+                                    <li style="color:white;font-weight:bold;text-decoration:none" class="text-center"><i class="fa fa-clock-o" style="color:white;font-weight:bold;text-decoration:none"></i> {{ ($category->created_at)->toFormattedDateString() }}</li>
                                 </ul>
                             </div>
                         </div>
