@@ -15,6 +15,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   <!-- Font Awesome Icons -->
 <link rel="stylesheet" href="/css/app.css">
+<link rel="icon" href="{{ asset('img/logo.jpg') }}">
+
 </head>
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed ">
     <div class="wrapper">

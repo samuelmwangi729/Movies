@@ -68,7 +68,9 @@
                 <div class="col-lg-4">
                     <div class="footer-about">
                         <div class="fa-logo">
-            <a href="/" style="color:white;font-family: 'Times New Roman', Times, serif;font-size:40px;text-shadow: 2px 2px blue,4px 4px black !important">{{ config('app.name') }}</a>
+                        <img src="{{ asset('img/logo.jpg') }}" width="75%">
+
+            {{-- <a href="/" style="color:white;font-family: 'Times New Roman', Times, serif;font-size:40px;text-shadow: 2px 2px blue,4px 4px black !important">{{ config('app.name') }}</a> --}}
                         </div>
                         <p>{{config('app.name ')}} is a category based paid streaming service</p>
                         <div class="fa-social">
