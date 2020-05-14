@@ -30,7 +30,7 @@
                                 @else
                                 <div class="alert alert-success">
                                     <a href="#" class="close" data-dismiss="alert">&timesbar;</a>
-                                    <strong>Thanks For Liking the Video</strong>
+                                    <i class="fa fa-thumbs-up" style="color:red"></i><strong>You Liked this Video</strong>
                                 </div>
                                 @endif
                                 &nbsp;<br>

@@ -96,6 +96,30 @@ Route::group(['middleware' => ['auth']], function () {
         'uses' => 'HomeController@update',
         'as' => 'account.update'
     ]);
+    Route::Post('/Payment/Update', [
+        'uses' => 'PaymentController@store',
+        'as' => 'payment.update'
+    ]);
+    Route::get('/Payment/Home', [
+        'uses' => 'PaymentController@payments',
+        'as' => 'payment.index'
+    ]);
+    Route::get('/Payment/Requests', [
+        'uses' => 'PaymentController@requests',
+        'as' => 'payment.requests'
+    ]);
+    Route::post('/Payment/Store', [
+        'uses' => 'PaymentController@sPayment',
+        'as' => 'payment.store'
+    ]);
+    Route::post('/Payment/Register', [
+        'uses' => 'PaymentController@Payout',
+        'as' => 'payout.register'
+    ]);
+    Route::get('/Payment/Delete/{id}', [
+        'uses' => 'PaymentController@destroy',
+        'as' => 'payment.delete'
+    ]);
 });
 Route::Post('/Reset/Password', [
     'uses' => 'IndexController@reset',
@@ -105,5 +129,3 @@ Route::Post('/Newspaper/Subscribe', [
     'uses' => 'IndexController@subscribe',
     'as' => 'newsletter.subscribe'
 ]);
-
-Route::get('/test', 'DateTest@index')->name('fileUploadPost');

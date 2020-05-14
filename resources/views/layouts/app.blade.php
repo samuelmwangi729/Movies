@@ -62,9 +62,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <li class="nav-item d-none d-sm-inline-block">
             <a href="/" class="nav-link">Home</a>
           </li>
-          <li class="nav-item d-none d-sm-inline-block">
-            <a href="#" class="nav-link">Contact</a>
-          </li>
         </ul>
       </nav>
       <!-- /.navbar -->
@@ -161,6 +158,50 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   </li>
                 </ul>
               </li>
+              @if(Auth::user()->isAdmin ==1)
+              <li class="nav-item has-treeview">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-money-bill"></i>
+                  <p>
+                    Payment Methods
+                    <i class="fas fa-angle-left right"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="{{ route('payment.index') }}" class="nav-link">
+                      <i class="fa fa-plus-circle nav-icon"></i>
+                      <p>Manage Methods</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{ route('payment.requests') }}" class="nav-link">
+                      <i class="fa fa-plus-circle nav-icon"></i>
+                      <p>Payout Requests</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              @endif
+              @if(Auth::user()->isAdmin == 0)
+                  <li class="nav-item has-treeview">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-money-bill"></i>
+                  <p>
+                    Payout Requests
+                    <i class="fas fa-angle-left right"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="{{ route('payment.requests') }}" class="nav-link">
+                      <i class="fa fa-plus-circle nav-icon"></i>
+                      <p>Payout Requests</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              @endif
               <li class="nav-item">
                 <a href="{{ route('account') }}" class="nav-link">
                   <i class="fa fa-cog nav-icon"></i>

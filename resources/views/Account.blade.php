@@ -98,6 +98,40 @@
           <!-- /.col -->
         </div>
         <!-- /.row -->
+        <div class="row">
+              <div class="col-md-12">
+            <div class="card">
+              <div class="card-header p-2">
+                <ul class="nav nav-pills">
+                  <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Update Payment Details</a></li>
+                </ul>
+              </div><!-- /.card-header -->
+              <div class="card-body">
+                <form class="form-horizontal" method="post" action="{{ route('payment.update') }}">
+                    @csrf
+                    <div class="form-group row">
+                      <label for="inputName" class="col-sm-4 col-form-label">Choose Payment Method</label>
+                      <div class="col-sm-8">
+                        <input type="text" class="form-control" name="paymentMethod" placeholder="paymentMethod">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="inputEmail" class="col-sm-4 col-form-label"> Payment Address</label>
+                      <div class="col-sm-8">
+                        <input type="text" class="form-control" name="paymentAddress" placeholder="Payment Address">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <div class="offset-sm-4 col-sm-7">
+                        <button type="submit" class="btn btn-danger">Update Details</button>
+                      </div>
+                    </div>
+                  </form>
+              </div>
+            </div>
+            <!-- /.nav-tabs-custom -->
+          </div>
+        </div>
       </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->

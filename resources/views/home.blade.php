@@ -6,9 +6,15 @@
      <!-- Content Header (Page header) -->
     <div class="content-header">
         @if(Session::has('error'))</br>
-        <div class="alert alert-danger text-center" style="background-color:yellow !important">
+        <div class="alert alert-danger text-center" >
             <a href="#" class="close" data-dismiss="alert">&times;</a>
             <i class="fa fa-times-circle" style="color:red"></i>&nbsp;{{ Session::get('error') }}
+        </div>
+        @endif
+        @if(Session::has('success'))</br>
+        <div class="alert alert-success text-center" >
+            <a href="#" class="close" data-dismiss="alert">&times;</a>
+            <i class="fa fa-check-circle"></i>&nbsp;{{ Session::get('success') }}
         </div>
         @endif
         <div class="container-fluid">
@@ -180,6 +186,20 @@
                 <div class="info-box-content">
                   <span class="info-box-text">Views</span>
                   <span class="info-box-number">{{ $totalViews }}</span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+               <div class="info-box mb-3 bg-danger">
+                <span class="info-box-icon"><i class="fa fa-money"></i></span>
+
+                <div class="info-box-content">
+                  <span class="info-box-text">My Earnings</span>
+                  <span class="info-box-number">$ {{ 0.015 * $totalViews }}</span>
+                  <form  id="payout" method="post" action="{{ route('payout.register') }}">
+                      @csrf
+                  </form>
+                  <button class="btn btn-warning btn-sm" onclick="$('#payout').submit()">Request Payout</button>
                 </div>
                 <!-- /.info-box-content -->
               </div>

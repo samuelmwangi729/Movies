@@ -86,7 +86,7 @@
                                     @foreach($featured as $feature)
                                     <div class="mw-post-item">
                                         <div class="mw-pic">
-                                            <img src="{{ asset($feature->VideoPoster) }}" alt="" height="132px" width="198px">
+                                            <img src="{{ asset($feature->VideoPoster) }}" alt="" height="132px" width="198px" onclick="window.open('{{ route('video.review',[$feature->VideoSlug]) }}','_parent')">
                                         </div>
                                         <div class="mw-text">
                                             <h6>

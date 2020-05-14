@@ -34,7 +34,7 @@
                                 @foreach($videosOld as $videoOld)
                                 <div class="trending-item">
                                     <div class="ti-pic">
-                                        <img src="{{ asset($videoOld->VideoPoster) }}" alt="">
+                                        <img src="{{ asset($videoOld->VideoPoster) }}" alt="" onclick="window.open('{{ route('video.review',[$videoOld->VideoSlug]) }}','_parent')">
                                     </div>
                                    <span> <a style="color:white" href="{{ route('video.review',[$videoOld->VideoSlug]) }}">{{ $videoOld->VideoTitle }}</a></span><br>
                                     <span style="color:white"><strong style="color:red">Category</strong>&nbsp;{{ $videoOld->VideoCategory }}</span>
@@ -106,7 +106,7 @@
                                     <div class="un-slider owl-carousel">
                                         <div class="col-lg-12">
                                             @if($poster->count()>0)
-                                            <div class="un-big-item set-bg" data-setbg="{{asset($poster[0]->VideoPoster)}}">
+                                            <div class="un-big-item set-bg" data-setbg="{{asset($poster[0]->VideoPoster)}}" onclick="window.open('{{ route('video.review',[$poster[0]->VideoSlug]) }}','_parent')">
                                                 <div class="ub-text">
                                                     <div class="label"><span>Latest</span></div>
                                                     <h5>
@@ -546,7 +546,7 @@
                             @foreach($poster as $p)
                             <div class="trending-item">
                                 <div class="ti-pic">
-                                    <img src="{{ $p->VideoPoster }}" alt="" height="60px" width="80px">
+                                    <img src="{{ $p->VideoPoster }}" alt="" height="60px" width="80px" onclick="window.open('{{ route('video.review',[$p->VideoSlug]) }}','_parent')">
                                 </div>
                                 <div class="ti-text">
                                     <h6>
