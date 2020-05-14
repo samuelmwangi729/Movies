@@ -150,10 +150,12 @@
                 {{-- <a href="javascript:void(0)" class="btn btn-sm btn-info float-left" data-toggle="modal" data-target="#modal-default">Place New Order</a> --}}
                 {{-- <a href="javascript:void(0)" class="btn btn-sm btn-danger float-right" id="view">View All Order</a> --}}
               </div>
+
               <!-- /.card-footer -->
             </div>
             <!-- /.card -->
 
+            <marquee><div class="alert alert-danger">Paypal Is the Only Available Payment Platform to cash your Earning</div></marquee>
 
             </div>
             <!-- /.col -->
