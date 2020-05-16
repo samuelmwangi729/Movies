@@ -141,6 +141,7 @@
                         <input type="password" class="input-value" name="password" id="password" placeholder="Password">
                         <span id="errCPassword"></span>
                         <input type="password" class="input-value" name="password_confirmation" id="cpassword" placeholder="Confirm Password">
+                         <div class="g-recaptcha" data-sitekey="6Lej6_MUAAAAACOtoEH-njOUJrwyWxSzObdeYbIT"></div>
                     </div>
                     <div class="radio-check">
                         <label for="rc-agree">I agree with the term & conditions
@@ -148,7 +149,6 @@
                             <span class="checkbox"></span>
                         </label>
                     </div>
-                    <div class="g-recaptcha" data-sitekey="6Lej6_MUAAAAACOtoEH-njOUJrwyWxSzObdeYbIT"></div>
                     <button type="submit" id="signUp"><span>REGISTER NOW</span></button>
                 </form>
             </div>
