@@ -132,7 +132,6 @@
                 </div>
                 <form method="POST" action="{{ route('register') }}" class="signup-form" id="sform">
                     @csrf
-                    <input type="hidden" name="recaptcha" id="recaptcha">
                     <div class="sf-input-list">
                         <span id="errName"></span>
                         <input type="text" class="input-value" name="name" id="name" placeholder="UserName*">
@@ -149,6 +148,7 @@
                             <span class="checkbox"></span>
                         </label>
                     </div>
+                    <div class="g-recaptcha" data-sitekey="6Lej6_MUAAAAACOtoEH-njOUJrwyWxSzObdeYbIT"></div>
                     <button type="submit" id="signUp"><span>REGISTER NOW</span></button>
                 </form>
             </div>
@@ -226,16 +226,6 @@
     <script src="{{ asset('js/main.js') }}"></script>
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5eaf8aaf95612e10"></script>
-    <script src="https://www.google.com/recaptcha/api.js?render={{ config('services.recaptcha.sitekey') }}"></script>
-    <script>
-            grecaptcha.ready(function() {
-                grecaptcha.execute('{{ config('services.recaptcha.sitekey') }}', {action: 'signup-form'}).then(function(token) {
-                    if (token) {
-                    document.getElementById('recaptcha').value = token;
-                    }
-                });
-            });
-    </script>
 </body>
 
 </html>
