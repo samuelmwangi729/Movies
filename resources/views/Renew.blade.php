@@ -20,10 +20,9 @@
                         <div class="dt-desc">
                             <p>Please Renew for ${{ $Price }} to Continue  enjoying Videos in this Category</p>
                         </div>
-                        <a href="https://www.instamojo.com/@Vildstream/lfe4e4a72977c47f8a41cc3371f59d2b5/"
-                        rel="im-checkout" data-text="Renew"
-                        data-css-style="color:#b80000; background:#fccb00; width:180px; border-radius:30px"
-                          data-layout="vertical"></a>
+                          <a href="https://www.instamojo.com/@Vildstream/l81f1df4e3c384ef7aad3f21212ed17c7/" rel="im-checkout" data-text="Pay" data-css-style="color:#ffffff; background:#75c26a; width:300px; border-radius:4px"
+                           data-description="Pay to VildStream"
+                            data-layout="vertical"></a>
                         <div class="col-sm-3 col-sm-offset-5">
                             {{ Session::flash('category',$vidCategory) }}
                         </div>
