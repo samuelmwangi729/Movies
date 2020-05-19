@@ -20,8 +20,7 @@
                         <div class="dt-desc">
                             <p>Please Subscribe for ${{ $Price }} per month to enjoy this Category</p>
                         </div>
-                        <a href="https://www.instamojo.com/@Vildstream/l81f1df4e3c384ef7aad3f21212ed17c7/" rel="im-checkout" data-text="Pay" data-css-style="color:#ffffff; background:#75c26a; width:300px; border-radius:4px"
-                           data-description="Pay to VildStream"
+                        <a href="https://www.instamojo.com/@Vildstream/l81f1df4e3c384ef7aad3f21212ed17c7/" rel="im-checkout" data-text="Pay" data-css-style="color:#ffffff; background:#fccb00; width:300px; border-radius:4px"
                             data-layout="vertical"></a>
                         <div class="col-sm-3 col-sm-offset-5">
                             {{ Session::flash('category',$vidCategory) }}
