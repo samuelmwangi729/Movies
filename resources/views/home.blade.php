@@ -155,6 +155,7 @@
             </div>
             <!-- /.card -->
 
+            <div class="alert alert-danger">To avoid Copyright Conflicts With images, Use images from <a href="https://www.pexels.com">pexels.com</a></div>
             <marquee><div class="alert alert-danger">Paypal Is the Only Available Payment Platform to cash your Earning</div></marquee>
 
             </div>

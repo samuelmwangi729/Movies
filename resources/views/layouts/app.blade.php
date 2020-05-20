@@ -230,19 +230,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
     </main>
 </div>
    @else
-   <section class="content" style="margin-top:250px">
-    <div class="error-page">
-      <h2 class="headline text-warning"> </h2>
+   <section class="content" style="background-image:url({{ asset('img/hero/hero-1.jpg') }});height:900px;background-size:cover">
+     <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br>
+   <div class="text-center mb-6" style="padding-top:200px;color:white;font-size:30px">
+     <marquee> <i class="fa fa-user-alt-slash" style="color:red;font-size:100px"></i></marquee>
+         <a href="/"> Login</a> to View
+   </div>
 
-      <div class="error-content">
-        <p>
-         Please <a href="/">Login</a> to View
-
-        </p>
-      </div>
-      <!-- /.error-content -->
-    </div>
-    <!-- /.error-page -->
+   </div>
   </section>
    @endif
     <!-- REQUIRED SCRIPTS -->
