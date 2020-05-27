@@ -112,7 +112,11 @@
                     <div class="form-group row">
                       <label for="inputName" class="col-sm-4 col-form-label">Choose Payment Method</label>
                       <div class="col-sm-8">
-                        <input type="text" class="form-control" name="paymentMethod" placeholder="paymentMethod">
+                        <select class="form-control" name="paymentMethod">
+                          @foreach($methods as $method)
+                            <option>{{ $method->PaymentMethod }}</option>
+                          @endforeach
+                        </select>
                       </div>
                     </div>
                     <div class="form-group row">

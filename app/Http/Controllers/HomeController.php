@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\{User,Category,Video,CatSubscriber};
+use App\{User,Category,Video,CatSubscriber,PaymentMethod};
 use Auth;
 use Hash;
 use Session;
@@ -80,7 +80,8 @@ class HomeController extends Controller
         return response(json_encode(Auth::user()));
      }
      public function account(){
-         return view('Account');
+         $methods=PaymentMethod::all();
+         return view('Account')->with('methods',$methods);
      }
      public function update(Request $request){
          $this->validate($request,[
