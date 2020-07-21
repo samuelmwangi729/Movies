@@ -2,7 +2,6 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -14,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::resource('phones/Users', 'Mobile\LoginController',['only'=>['store']]);
+Route::resource('phone/Categories','Mobile\CategoriesController',['only'=>['index']]);
+Route::resource('phone/Videos','Mobile\VideosController',['only'=>['index']]);
+Route::resource('phone/Trailers','Mobile\TrailersController',['only'=>['index']]);
+Route::resource('phone/User','Mobile\UserController',['only'=>['index','store','update']]);

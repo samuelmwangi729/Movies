@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
-
+use App\PhoneUser;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\User;
@@ -64,6 +64,11 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        //first create a phone user for later auth
+        PhoneUser::create([
+            'email'=>$data['email'],
+            'password'=>sha1($data['password'])
+        ]);
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],

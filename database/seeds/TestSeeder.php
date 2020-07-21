@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\User;
 use App\CatSubscriber;
-
+use App\PhoneUser;
 class TestSeeder extends Seeder
 {
     /**
@@ -16,11 +16,15 @@ class TestSeeder extends Seeder
         User::create([
             'name'=>'samuel mwangi',
             'email' =>'samuelmwangi729@gmail.com',
-            'password'=>Hash::make('12345678')
+            'password'=>Hash::make('P!@#four5sam')
         ]);
         CatSubscriber::create([
             'Subscriber'=>'samuelmwangi729@gmail.com',
             'Category'=>'Education'
+        ]);
+        PhoneUser::create([
+            'email'=>'samuelmwangi729@gmail.com',
+            'password'=>sha1('P!@#four5sam')
         ]);
     }
 }
