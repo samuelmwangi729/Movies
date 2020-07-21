@@ -62,7 +62,7 @@ class LoginController extends Controller
         if($phonePassword==$inputPass){
             //the passwords aer okay
             //generate the auth token
-            $token=Str::random(26);
+            $token=Str::random(100);
             $phoneUser->token=$token;
             $phoneUser->save();
             return response()->json(['data'=>'Successfully Logged In','token'=>$token,'response'=>'success'],200);
