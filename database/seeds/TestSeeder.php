@@ -13,18 +13,18 @@ class TestSeeder extends Seeder
      */
     public function run()
     {
-        User::create([
-            'name'=>'samuel mwangi',
-            'email' =>'samuelmwangi729@gmail.com',
-            'password'=>Hash::make('P!@#four5sam')
-        ]);
+        // User::create([
+        //     'name'=>'samuel mwangi',
+        //     'email' =>'samuelmwangi729@gmail.com',
+        //     'password'=>Hash::make('P!@#four5sam')
+        // ]);
         CatSubscriber::create([
-            'Subscriber'=>'samuelmwangi729@gmail.com',
-            'Category'=>'Education'
+            'Subscriber'=>'sam@sam.comx',
+            'Category'=>'Science and Tech'
         ]);
-        PhoneUser::create([
-            'email'=>'samuelmwangi729@gmail.com',
-            'password'=>sha1('P!@#four5sam')
-        ]);
+        // PhoneUser::create([
+        //     'email'=>'samuelmwangi729@gmail.com',
+        //     'password'=>sha1('P!@#four5sam')
+        // ]);
     }
 }

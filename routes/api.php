@@ -18,3 +18,4 @@ Route::resource('phone/Categories','Mobile\CategoriesController',['only'=>['inde
 Route::resource('phone/Videos','Mobile\VideosController',['only'=>['index']]);
 Route::resource('phone/Trailers','Mobile\TrailersController',['only'=>['index']]);
 Route::resource('phone/User','Mobile\UserController',['only'=>['index','store','update']]);
+Route::resource('/phone/Subscribers','Mobile\SubsController');
